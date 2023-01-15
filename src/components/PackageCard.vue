@@ -1,50 +1,61 @@
 <template>
-  <div class="mr-8">
-    <v-card
-      class="mx-auto image-lock cursor rounded-lg"
-      max-width="300"
-      color="secondary"
-    >
-      <v-img class="card-bg" :src="imageOne" height="250" width="300"></v-img>
-    </v-card>
-    <v-card
-      class="mt-n12 mx-auto rounded-lg pa-3 cursor"
-      elevation="12"
-      max-width="270"
-      rounded
-    >
-      <div>
-        <div class="mb-2">
-          <v-chip-group active-class="white--text font-weight-medium" column>
-            <v-chip small color="#f9f9f9" text-color="#787878">2 Guests</v-chip>
-            <v-chip small color="#f9f9f9" text-color="#787878">6 Nights</v-chip>
-          </v-chip-group>
-        </div>
-
-        <div class="mb-4">
-          <h3>A Staycation at Nairobi</h3>
-          <v-list-item-subtitle>Nairobi</v-list-item-subtitle>
-        </div>
+  <v-hover v-slot="{ hover }">
+    <div class="mr-8">
+      <v-card
+        class="mx-auto image-lock cursor rounded-lg"
+        max-width="300"
+        color="secondary"
+      >
+        <v-img class="card-bg" :src="imageOne" height="250" width="300"></v-img>
+      </v-card>
+      <v-card
+        class="mt-n12 mx-auto rounded-lg pa-3 cursor"
+        elevation="12"
+        max-width="270"
+        rounded
+      >
         <div>
-          <div class="small-height hide">
-            <p><strong>From:</strong> 02 Dec 2022</p>
-            <p>All Inclusive</p>
+          <div class="mb-2">
+            <v-chip-group active-class="white--text font-weight-medium" column>
+              <v-chip small color="#f9f9f9" text-color="#787878"
+                >2 Guests</v-chip
+              >
+              <v-chip small color="#f9f9f9" text-color="#787878"
+                >6 Nights</v-chip
+              >
+            </v-chip-group>
           </div>
-
-          <div class="d-flex justify-space-between mt-6">
-            <v-btn class="primary hide">Book</v-btn>
-            <v-btn class="disabled" plain>
-              <h3 style="color: #000">$250</h3></v-btn
-            >
+          <div class="mb-4">
+            <h3>A Staycation at Nairobi</h3>
+            <v-list-item-subtitle>Nairobi</v-list-item-subtitle>
+          </div>
+          <div class="d-flex justify-between">
+            <div>
+              <v-expand-transition>
+                <div
+                  v-if="hover"
+                  class="small-height transition-fast-in-fast-out"
+                >
+                  <div>
+                    <p><strong>From:</strong> 02 Dec 2022</p>
+                    <p>All Inclusive</p>
+                  </div>
+                  <div class="d-flex justify-space-between mt-6">
+                    <v-btn class="primary">Book</v-btn>
+                  </div>
+                </div>
+              </v-expand-transition>
+            </div>
+            <div class="always-right d-flex justify-end align-end">
+              <v-btn class="disabled" plain>
+                <h3 style="color: #000">$250</h3>
+              </v-btn>
+            </div>
           </div>
         </div>
-      </div>
-    </v-card>
-    <p class="mt-4 show-hidden">show</p>
-    <p class="mt-4 hide">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-    </p>
-  </div>
+      </v-card>
+    </div>
+  </v-hover>
 </template>
 
 <script lang="ts">
@@ -69,6 +80,10 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.always-right {
+  right: 0;
+  bottom: 0;
+}
 .small-height {
   line-height: 8px;
 }
@@ -84,9 +99,6 @@ export default Vue.extend({
   display: flex;
 }
 
-.card-bg {
-  background-size: cover;
-}
 .card-bg :hover {
   background-size: cover;
   animation: zoom-in-zoom-out 10s ease;
@@ -108,5 +120,9 @@ export default Vue.extend({
 }
 .image-lock {
   overflow: hidden;
+}
+
+.more-details :hover + .hide {
+  visibility: visible;
 }
 </style>
