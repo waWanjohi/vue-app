@@ -1,5 +1,5 @@
 <template>
-  <div class="center mx-3">
+  <div class="center mx-md-3">
     <v-btn text>
       <v-icon color="#ff7a79" size="30px">{{ icon }}</v-icon>
     </v-btn>

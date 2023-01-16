@@ -9,7 +9,7 @@
       height="70"
       grow
     >
-      <v-container class="d-flex align-center justify-center mx-3">
+      <v-container class="d-flex align-center justify-center mx-md-3">
         <BottomBarButton
           v-for="(item, index) in iconData"
           :title="item.title"
