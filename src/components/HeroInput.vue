@@ -6,6 +6,7 @@
         :prepend-icon="leadingIcon"
         style="color: primary"
         :placeholder="placeHolder"
+        class="mt-2"
       >
         This is a text Area
       </v-text-field>

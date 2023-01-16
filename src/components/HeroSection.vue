@@ -3,19 +3,30 @@
     <div class="absolute-div"></div>
     <div class="hero d-lg-flex">
       <v-container class="center">
-        <div class="d-flex flex-column mt-n12 mb-3">
+        <div class="d-flex flex-column mt-12 mb-3">
           <div class="d-flex align-center flex-column">
             <div class="white--text">
-              <h1 class="font-weight-black text-h1">LET'S GET TRIPPY</h1>
+              <p
+                style="font-family: Futura-Bold"
+                class="font-weight-black text-center text-lg-h1 text-h4 title show-border-line"
+              >
+                LET'S GET TRIPPY
+              </p>
             </div>
-            <div class="white--text text-subtitle text-center">
-              <h2>Start paying for your trips in installments Today!</h2>
+            <div class="white--text text-sm text-lg-h5 text-center">
+              <p>Start paying for your trips in installments Today!</p>
             </div>
           </div>
 
-          <div class="d-flex align-start justify-start mt-8">
-            <div class="d-flex flex-column justify-space-between">
-              <v-card class="mt-7 mb-7 rounded-lg hero-shadow" width="280">
+          <div
+            class="d-none d-lg-flex align-start justify-center mt-8 ml-13 text-h6"
+          >
+            <div class="d-flex flex-column justify-start align-start">
+              <v-card
+                class="mt-7 mb-7 rounded-lg hero-shadow"
+                width="268"
+                height="50"
+              >
                 <v-tabs
                   style="color: secondary"
                   class="d-flex justify-space-between transparent"
@@ -31,8 +42,9 @@
               </v-card>
               <v-spacer></v-spacer>
               <v-card
-                class="d-flex justify-space-evenly align-center rounded-lg hero-shadow mt-7"
-                height="60"
+                class="d-flex justify-space-evenly align-center rounded-lg hero-shadow mt-7 show-border-line"
+                height="50"
+                width="90%"
               >
                 <HeroInput
                   :trailingIcon="leadingIcon"
@@ -75,25 +87,31 @@
                   :placeHolder="`Number of guests`"
                   :trailingIcon="leadingIcon"
                 />
-                <v-btn flat elevation="0" class="transparent">
+                <div class="transparent mx-3">
                   <v-icon>mdi-search-web</v-icon>
-                </v-btn>
+                </div>
               </v-card>
             </div>
           </div>
         </div>
+
+        <v-container class="d-flex flex-column align-center justify-center">
+          <CustomSearchBar :text="`STAYS`" />
+          <CustomSearchBar :text="`PACKAGES`" />
+        </v-container>
       </v-container>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import CustomSearchBar from "./CustomSearchBar.vue";
 import HeroInput from "./HeroInput.vue";
 import TabButton from "./TabButton.vue";
 
 export default {
   name: "HeroSection",
-  components: { HeroInput, TabButton },
+  components: { HeroInput, TabButton, CustomSearchBar },
   data: () => ({
     keyImage:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAMAAABVlYYBAAAAHlBMVEVMaXEAOmwAOmwAOmwAOmwAOmwAOmwAOmwAOmwAOmxG0OHdAAAACnRSTlMA/+OaOxZYesWzTi+BaQAAAJFJREFUGNNtkFsShSAMQ5vQF/vf8G1FRZ2br3LIpAGRS0FwmLyVaPGNA4xReDyYKhEus/CGTgOC1il3hFYaK1PxpKkinelN5+2teyMyjhprX6fVpHBi40SdwjLMPceJHfSa6avN6Z5Ii+F2Fe/OOCrl5P2mI0TWhl1I4i9Vd5Vnna25qL+p/vvX0/yxSn8M44N+YOAClf3rslcAAAAASUVORK5CYII=",

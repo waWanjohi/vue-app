@@ -1,9 +1,9 @@
 <template>
   <div class="a-tab rounded-lg">
-    <v-tab class="">
+    <v-tab class="rounded-lg">
       <div class="d-flex justify-center align-center pt-3">
-        <v-img :src="src" />
-        <p class="ml-4">{{ title }}</p>
+        <v-img class="mb-3" :src="src" />
+        <p class="ml-4 mt-1">{{ title }}</p>
       </div>
     </v-tab>
   </div>
