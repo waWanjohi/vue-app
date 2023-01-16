@@ -95,7 +95,9 @@
           </div>
         </div>
 
-        <v-container class="d-flex flex-column align-center justify-center">
+        <v-container
+          class="d-none d-sm-flex d-md-flex d-lg-none flex-column align-center justify-center"
+        >
           <CustomSearchBar :text="`STAYS`" />
           <CustomSearchBar :text="`PACKAGES`" />
         </v-container>
