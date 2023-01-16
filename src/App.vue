@@ -9,23 +9,25 @@
           <HeroSection />
         </v-container>
       </div>
-      <!-- <BottomBar> -->
-      <div>
-        <GetTrippySection />
-        <PackagesSection />
-        <DestinationsSection />
-        <ListingsSection />
-        <VideoIframe />
-      </div>
-      <BottomFooter />
-      <!-- </BottomBar> -->
+      <BottomBar>
+        <div>
+          <v-slide-y-transition>
+            <GetTrippySection />
+          </v-slide-y-transition>
+          <PackagesSection />
+          <DestinationsSection />
+          <ListingsSection />
+          <VideoIframe />
+        </div>
+        <BottomFooter />
+      </BottomBar>
     </div>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-// import BottomBar from "./components/BottomBar.vue";
+import BottomBar from "./components/BottomBar.vue";
 import NavBar from "@/components/NavBar.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import GetTrippySection from "@/components/GetTrippySection.vue";
@@ -39,7 +41,7 @@ export default Vue.extend({
   name: "App",
   components: {
     NavBar,
-    // BottomBar,
+    BottomBar,
     HeroSection,
     GetTrippySection,
     PackagesSection,
@@ -52,7 +54,7 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .show-border-line {

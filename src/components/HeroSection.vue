@@ -8,7 +8,7 @@
             <div class="white--text">
               <p
                 style="font-family: Futura-Bold"
-                class="font-weight-black text-center text-lg-h1 text-h4 title show-border-line"
+                class="font-weight-black text-center text-lg-h1 text-h4 title"
               >
                 LET'S GET TRIPPY
               </p>
