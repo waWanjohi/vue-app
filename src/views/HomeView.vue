@@ -313,8 +313,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import PackagesSection from "@/components/PackagesSection.vue";
-import HeroSection from "@/components/HeroSection.vue";
+import PackagesSection from "@/sections/PackagesSection.vue";
+import HeroSection from "@/sections/HeroSection.vue";
 
 export default Vue.extend({
   name: "HomeView",

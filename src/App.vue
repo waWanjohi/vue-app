@@ -3,13 +3,13 @@
 
   <v-app>
     <div class="main-body">
-      <NavBar />
+      <NavBarSection />
       <div>
         <v-container fluid class="hero-div">
           <HeroSection />
         </v-container>
       </div>
-      <BottomBar>
+      <BottomBarSection>
         <div>
           <v-slide-y-transition>
             <GetTrippySection />
@@ -17,38 +17,38 @@
           <PackagesSection />
           <DestinationsSection />
           <ListingsSection />
-          <VideoIframe />
+          <VideoIframeSection />
         </div>
         <BottomFooter />
-      </BottomBar>
+      </BottomBarSection>
     </div>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import BottomBar from "./components/BottomBar.vue";
-import NavBar from "@/components/NavBar.vue";
-import HeroSection from "@/components/HeroSection.vue";
-import GetTrippySection from "@/components/GetTrippySection.vue";
-import PackagesSection from "@/components/PackagesSection.vue";
-import BottomFooter from "./components/BottomFooter.vue";
-import DestinationsSection from "./components/DestinationsSection.vue";
-import ListingsSection from "./components/ListingsSection.vue";
-import VideoIframe from "./components/VideoIframe.vue";
+import BottomBarSection from "./sections/BottomBarSection.vue";
+import NavBarSection from "@/sections/NavBarSection.vue";
+import HeroSection from "@/sections/HeroSection.vue";
+import GetTrippySection from "@/sections/GetTrippySection.vue";
+import PackagesSection from "@/sections/PackagesSection.vue";
+import BottomFooter from "./sections/BottomFooterSection.vue";
+import DestinationsSection from "./sections/DestinationsSection.vue";
+import ListingsSection from "./sections/ListingsSection.vue";
+import VideoIframeSection from "./sections/VideoIframeSection.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
-    NavBar,
-    BottomBar,
+    NavBarSection,
+    BottomBarSection,
     HeroSection,
     GetTrippySection,
     PackagesSection,
     BottomFooter,
     DestinationsSection,
     ListingsSection,
-    VideoIframe,
+    VideoIframeSection,
   },
   data: () => ({}),
 });

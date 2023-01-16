@@ -107,9 +107,9 @@
 </template>
 
 <script lang="ts">
-import CustomSearchBar from "./CustomSearchBar.vue";
-import HeroInput from "./HeroInput.vue";
-import TabButton from "./TabButton.vue";
+import CustomSearchBar from "@/components/CustomSearchBar.vue";
+import HeroInput from "@/components/HeroInput.vue";
+import TabButton from "@/components/TabButton.vue";
 
 export default {
   name: "HeroSection",

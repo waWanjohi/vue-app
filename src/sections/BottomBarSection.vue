@@ -25,9 +25,9 @@
   </v-main>
 </template>
 <script lang="ts">
-import BottomBarButton from "./BottomBarButton.vue";
+import BottomBarButton from "@/components/BottomBarButton.vue";
 export default {
-  name: "BottomBar",
+  name: "BottomBarSection",
   components: { BottomBarButton },
   data: () => ({
     value: "recent",

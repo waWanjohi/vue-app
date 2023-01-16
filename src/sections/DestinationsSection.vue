@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts">
-import CustomCarousel from "./CustomCarousel.vue";
+import CustomCarousel from "@/components/CustomCarousel.vue";
 
 export default {
   name: "DestinationsSection",

@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import ListingCard from "./ListingCard.vue";
+import ListingCard from "@/components/ListingCard.vue";
 
 export default {
   name: "ListingsSection",

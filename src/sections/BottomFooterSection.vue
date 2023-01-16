@@ -45,7 +45,7 @@
   </div>
 </template>
 <script lang="ts">
-import FooterCard from "./FooterCard.vue";
+import FooterCard from "@/components/FooterCard.vue";
 
 export default {
   name: "BottomFooter",
