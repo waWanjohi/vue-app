@@ -31,9 +31,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "FancyCard",
   props: ["image", "title", "upperText", "lowerText"],
 
@@ -44,7 +42,7 @@ export default Vue.extend({
       };
     },
   },
-});
+};
 </script>
 
 <style scoped>

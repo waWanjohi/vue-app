@@ -15,15 +15,13 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "ListingCard",
   props: ["image", "title", "description", "icon"],
   data: () => ({
     defaultIcon: "mdi-passport",
   }),
-});
+};
 </script>
 
 <style scoped>

@@ -31,10 +31,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import ListingCard from "./ListingCard.vue";
 
-export default Vue.extend({
+export default {
   name: "ListingsSection",
   data: () => ({
     listItems: [
@@ -59,7 +58,7 @@ export default Vue.extend({
     ],
   }),
   components: { ListingCard },
-});
+};
 </script>
 
 <style scoped>

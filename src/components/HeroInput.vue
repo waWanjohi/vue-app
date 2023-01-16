@@ -15,9 +15,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "HeroInput",
   props: ["leadingIcon", "trailingIcon", "placeHolder"],
   computed: {
@@ -34,5 +32,5 @@ export default Vue.extend({
       };
     },
   },
-});
+};
 </script>

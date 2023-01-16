@@ -32,10 +32,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import FancyCard from "@/components/FancyCard.vue";
 
-export default Vue.extend({
+export default {
   name: "GetTrippySection",
   components: { FancyCard },
   data: () => ({
@@ -64,7 +63,7 @@ export default Vue.extend({
       },
     ],
   }),
-});
+};
 </script>
 
 <style scoped>

@@ -45,10 +45,9 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
 import FooterCard from "./FooterCard.vue";
 
-export default Vue.extend({
+export default {
   name: "BottomFooter",
   components: { FooterCard },
   data: () => ({
@@ -126,7 +125,7 @@ export default Vue.extend({
       },
     ],
   }),
-});
+};
 </script>
 <style scoped>
 .copyright-section {

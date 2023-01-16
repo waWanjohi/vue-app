@@ -14,17 +14,15 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
 import PackageCard from "@/components/PackageCard.vue";
 
-export default Vue.extend({
+export default {
   name: "PackageSection",
   components: { PackageCard },
   data: () => ({
     name: "Some cool Shit bout to happen",
   }),
-});
+};
 </script>
 
 <style scoped>

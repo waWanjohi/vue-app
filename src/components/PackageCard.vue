@@ -59,9 +59,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "PackageCard",
   props: ["name", "photoUrl"],
   methods: {
@@ -76,7 +74,7 @@ export default Vue.extend({
     imageOne:
       "https://storage.googleapis.com/leizen-frontend.appspot.com/hotel/32e39df5-38fe-42a5-8c45-d0751f448ccc.webp?GoogleAccessId=firebase-adminsdk-pe7p9%40leizen-frontend.iam.gserviceaccount.com&Expires=16749763200&Signature=UNlLZScxqSzuH7%2B8DxSoRdzgEGADRQHbadrKmdvBop6NaW1fDcxRzVrXh2W7FIoVMsBqUSFcFM5kkl44vpEU%2Bl7xMui0UV9jR1piJraMrytcc22WRmfzJQd180SFRQMQccqhkjBNHEvkimHNoRnDcCVOEUwGH4ldV5jRvvUjCuPF84m0bxT6RqUFecSSbii4h1s1hqQPMEQ5DoyaToOLeM%2FRaFQDUq9zp14yZ2uizvXOU6YN%2B4jJYddObJmIIMzaTc5CZuLjW3dEl0yF0jP8zIJvDGeXmt9oMB7GsDTdZSP4OIZSPQXRdUsDqE1r29hkKS2qFdGKyb6HNzdnTD%2F8PA%3D%3D",
   }),
-});
+};
 </script>
 
 <style scoped>

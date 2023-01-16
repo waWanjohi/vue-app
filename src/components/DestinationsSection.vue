@@ -41,10 +41,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import CustomCarousel from "./CustomCarousel.vue";
 
-export default Vue.extend({
+export default {
   name: "DestinationsSection",
   data: () => ({
     items: [
@@ -86,7 +85,7 @@ export default Vue.extend({
     },
   },
   components: { CustomCarousel },
-});
+};
 </script>
 
 <style scoped>
