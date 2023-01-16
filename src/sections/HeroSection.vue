@@ -6,10 +6,7 @@
         <div class="d-flex flex-column mt-12 mb-3">
           <div class="d-flex align-center flex-column">
             <div class="white--text">
-              <p
-                style="font-family: Futura-Bold"
-                class="font-weight-black text-center text-lg-h1 text-h4 title"
-              >
+              <p class="font-weight-black text-center text-lg-h1 text-h4 title">
                 LET'S GET TRIPPY
               </p>
             </div>

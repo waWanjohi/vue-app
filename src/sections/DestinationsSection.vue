@@ -16,7 +16,7 @@
         reverse-transition="fade-transition"
         transition="fade-transition"
       >
-        <v-container class="d-flex justify-space-around">
+        <v-container class="d-flex flex justify-space-around">
           <div>
             <v-card
               flat
@@ -31,9 +31,9 @@
               <v-btn>Explore ></v-btn>
             </v-card>
           </div>
-          <v-card max-width="300px">
+          <!-- <v-card max-width="300px">
             <CustomCarousel />
-          </v-card>
+          </v-card> -->
         </v-container>
       </v-carousel-item>
     </v-carousel>
@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts">
-import CustomCarousel from "@/components/CustomCarousel.vue";
+// import CustomCarousel from "@/components/CustomCarousel.vue";
 
 export default {
   name: "DestinationsSection",
@@ -84,7 +84,7 @@ export default {
       return { "background-image": `url(${item})` };
     },
   },
-  components: { CustomCarousel },
+  // components: { CustomCarousel },
 };
 </script>
 

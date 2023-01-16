@@ -6,7 +6,13 @@
         max-width="300"
         color="secondary"
       >
-        <v-img class="card-bg" :src="imageOne" height="250" width="300"></v-img>
+        <v-img
+          class="card-bg"
+          :src="photoUrl ?? imageOne"
+          height="250"
+          width="300"
+          alt="image"
+        ></v-img>
       </v-card>
       <v-card
         class="mt-n12 mx-auto rounded-lg pa-3 cursor"
@@ -18,37 +24,37 @@
           <div class="mb-2">
             <v-chip-group active-class="white--text font-weight-medium" column>
               <v-chip small color="#f9f9f9" text-color="#787878"
-                >2 Guests</v-chip
+                >{{ guests }} Guests</v-chip
               >
               <v-chip small color="#f9f9f9" text-color="#787878"
-                >6 Nights</v-chip
+                >{{ nights }} Nights</v-chip
               >
             </v-chip-group>
           </div>
           <div class="mb-4">
-            <h3>A Staycation at Nairobi</h3>
-            <v-list-item-subtitle>Nairobi</v-list-item-subtitle>
+            <h3>{{ title }}</h3>
+            <v-list-item-subtitle>{{ subtitle }}</v-list-item-subtitle>
           </div>
-          <div class="d-flex justify-between">
-            <div>
+          <div class="d-flex justify-end">
+            <div class="">
               <v-expand-transition>
                 <div
                   v-if="hover"
                   class="small-height transition-fast-in-fast-out"
                 >
                   <div>
-                    <p><strong>From:</strong> 02 Dec 2022</p>
-                    <p>All Inclusive</p>
+                    <p><strong>From:</strong> {{ from }}</p>
+                    <p>{{ inclusion }}</p>
                   </div>
                   <div class="d-flex justify-space-between mt-6">
-                    <v-btn class="primary">Book</v-btn>
+                    <v-btn class="primary">{{ btnTitle }}</v-btn>
                   </div>
                 </div>
               </v-expand-transition>
             </div>
             <div class="always-right d-flex justify-end align-end">
-              <v-btn class="disabled" plain>
-                <h3 style="color: #000">$250</h3>
+              <v-btn class="black--text disabled" plain>
+                <h3>${{ amount }}</h3>
               </v-btn>
             </div>
           </div>
@@ -61,7 +67,18 @@
 <script lang="ts">
 export default {
   name: "PackageCard",
-  props: ["name", "photoUrl"],
+  props: [
+    "name",
+    "photoUrl",
+    "amount",
+    "btnTitle",
+    "inclusion",
+    "from",
+    "title",
+    "subtitle",
+    "guests",
+    "nights",
+  ],
   methods: {
     setBackground(url: string) {
       return {

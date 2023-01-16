@@ -48,11 +48,12 @@
       </v-card>
       <div class="justify-space-evenly d-none d-lg-flex d-xl-flex ml-n12">
         <v-toolbar-title
-          class="tile"
+          class="tile font-weight-bold"
           v-for="(item, index) in menuItems"
           :key="index"
           :class="{
             darkText: scrollPosition > 50,
+            lightText: scrollPosition < 50,
           }"
         >
           <p
@@ -117,6 +118,10 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.lightText {
+  color: #fff !important;
+}
+
 .darkText {
   color: #000 !important;
 }

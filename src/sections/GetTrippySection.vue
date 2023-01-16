@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    class="d-flex fancy-section justify-space-evenly align-center mx-auto"
-  >
+  <v-container class="d-flex fancy-section align-center mx-auto">
     <v-card
       class="mr-6 d-flex flex-column justify-center"
       flat
@@ -11,7 +9,9 @@
       <v-card-text>
         <div class="center">
           <br /><br />
-          <h2 class="text--primary text-center">Why Get this Trippy?</h2>
+          <h2 class="text--primary text-center font-weight-black text-h3">
+            Why Get this Trippy?
+          </h2>
           <br />
           <div class="h4 text--primary">
             Don’t go looking for great deals, great deals will come looking for
@@ -20,14 +20,14 @@
         </div>
       </v-card-text>
     </v-card>
-    <div v-for="(item, index) in fancyCardItems" :key="index" class="mr-4">
-      <FancyCard
-        :title="item.title"
-        :upper-text="item.upperText"
-        :lower-text="item.lowerText"
-        :image="item.background"
-      />
-    </div>
+    <FancyCard
+      v-for="(item, index) in fancyCardItems"
+      :key="index"
+      :title="item.title"
+      :upper-text="item.upperText"
+      :lower-text="item.lowerText"
+      :image="item.background"
+    />
   </v-container>
 </template>
 

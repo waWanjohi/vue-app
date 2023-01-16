@@ -4,7 +4,18 @@
     <br />
     <v-container class="cards-section">
       <div class="mb-6 d-flex justify-space-between no-overflow">
-        <PackageCard v-for="(item, index) in 5" :key="index" :name="name" />
+        <PackageCard
+          v-for="(item, index) in $store.state.packageItems"
+          :key="index"
+          :guests="item.guests"
+          :nights="item.nights"
+          :title="item.title"
+          :amount="item.amount"
+          :from="item.from"
+          :subtitle="item.subtitle"
+          :btn-title="item.btnTitle"
+          :photo-url="item.photoUrl"
+        />
       </div>
     </v-container>
     <div class="d-flex justify-end mt-n9 mr-n2">
@@ -19,9 +30,6 @@ import PackageCard from "@/components/PackageCard.vue";
 export default {
   name: "PackageSection",
   components: { PackageCard },
-  data: () => ({
-    name: "Some cool Shit bout to happen",
-  }),
 };
 </script>
 

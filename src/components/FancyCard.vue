@@ -12,7 +12,7 @@
         <v-card-text>
           <div class="center">
             <br /><br />
-            <h2 class="">{{ title }}</h2>
+            <h2 class="font-weight-bold">{{ title }}</h2>
             <br />
             <hr class="line" />
             <br />
