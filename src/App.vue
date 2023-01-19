@@ -9,23 +9,23 @@
           <HeroSection />
         </v-container>
       </div>
-      <BottomBarSection>
-        <container width="70%" class="d-flex flex-column body-section">
-          <GetTrippySection />
-          <PackagesSection />
-          <DestinationsSection />
-          <ListingsSection />
-          <VideoIframeSection />
-          <BottomFooter />
-        </container>
-      </BottomBarSection>
+      <!-- <BottomBarSection> -->
+      <container width="70%" class="d-flex flex-column body-section">
+        <GetTrippySection />
+        <PackagesSection />
+        <DestinationsSection />
+        <ListingsSection />
+        <VideoIframeSection />
+        <BottomFooter />
+      </container>
+      <!-- </BottomBarSection> -->
     </div>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import BottomBarSection from "./sections/BottomBarSection.vue";
+// import BottomBarSection from "./sections/BottomBarSection.vue";
 import NavBarSection from "@/sections/NavBarSection.vue";
 import HeroSection from "@/sections/HeroSection.vue";
 import GetTrippySection from "@/sections/GetTrippySection.vue";
@@ -39,7 +39,7 @@ export default Vue.extend({
   name: "App",
   components: {
     NavBarSection,
-    BottomBarSection,
+    // BottomBarSection,
     HeroSection,
     GetTrippySection,
     PackagesSection,
@@ -61,6 +61,10 @@ export default Vue.extend({
 
 .show-border-line {
   border: 1px solid #e60be6;
+}
+
+.transparent {
+  background: transparent;
 }
 .main-body {
   font-family: Hellix-Regular, Poppins, "Courier New", Courier, monospace;

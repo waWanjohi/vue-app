@@ -28,7 +28,6 @@ export default new Vuex.Store({
         inclusion: "All Included",
         btnTitle: "BOOK",
       },
-
       {
         guests: 3,
         nights: 4,
