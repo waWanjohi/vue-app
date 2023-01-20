@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-app-bar app>
+  <v-container class="show-border-line">
+    <v-app-bar app flat>
       <v-app-bar-nav-icon class="d-lg-none" @click.stop="drawer = !drawer" />
       <v-toolbar-title>
         <v-img :src="logo" height="auto" width="140" />
@@ -30,7 +30,6 @@
         </v-btn>
       </div>
     </v-app-bar>
-
     <v-navigation-drawer v-model="drawer" width="90%" app temporary>
       <v-list-item>
         <v-list-item-avatar color="primary" />
@@ -65,7 +64,7 @@
         </div>
       </v-list>
     </v-navigation-drawer>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -73,7 +72,7 @@ export default {
   name: "NavBarSection",
   data() {
     return {
-      drawer: true,
+      drawer: false,
       selectedItem: 1,
       items: ["Home", "About", "Contact Us"],
       logo: "https://www.tripitaca.com/_nuxt/img/tripitacalogo2.2b5908a.png",

@@ -2,30 +2,21 @@
   <!-- App.vue -->
 
   <v-app>
-    <div class="main-body">
-      <NavBarSection />
-      <div>
-        <v-container fluid class="hero-div">
-          <HeroSection />
-        </v-container>
-      </div>
-      <!-- <BottomBarSection> -->
-      <container width="70%" class="d-flex flex-column body-section">
-        <GetTrippySection />
-        <PackagesSection />
-        <DestinationsSection />
-        <ListingsSection />
-        <VideoIframeSection />
-        <BottomFooter />
-      </container>
-      <!-- </BottomBarSection> -->
-    </div>
+    <NavBarSection />
+    <v-main>
+      <HeroSection />
+      <GetTrippySection />
+      <PackagesSection />
+      <DestinationsSection />
+      <ListingsSection />
+      <VideoIframeSection />
+      <BottomFooter />
+    </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-// import BottomBarSection from "./sections/BottomBarSection.vue";
 import NavBarSection from "@/sections/NavBarSection.vue";
 import HeroSection from "@/sections/HeroSection.vue";
 import GetTrippySection from "@/sections/GetTrippySection.vue";
@@ -39,7 +30,6 @@ export default Vue.extend({
   name: "App",
   components: {
     NavBarSection,
-    // BottomBarSection,
     HeroSection,
     GetTrippySection,
     PackagesSection,
@@ -66,7 +56,8 @@ export default Vue.extend({
 .transparent {
   background: transparent;
 }
-.main-body {
+
+body {
   font-family: Hellix-Regular, Poppins, "Courier New", Courier, monospace;
 }
 .pad-sections {
@@ -78,16 +69,5 @@ export default Vue.extend({
     width: 100% !important;
     scrollbar-width: 100%;
   }
-}
-.hero-div {
-  height: 100vh !important;
-  overflow-y: hidden;
-  width: 100%;
-  position: relative;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.hero-div::-webkit-scrollbar {
-  display: none;
 }
 </style>
