@@ -10,7 +10,7 @@
     </v-card-text>
 
     <v-container
-      class="d-lg-flex align-lg-center justify-lg-space-evenly stack-top mb-n12"
+      class="d-flex flex-column flex-md-row justify-center align-center justify-md-space-evenly stack-top mb-n12"
     >
       <FancyCard
         v-for="(item, index) in fancyCardItems"
@@ -23,10 +23,11 @@
       />
     </v-container>
     <v-card
-      class="show-border-line mt-n15 image rounded-xl"
+      class="show-border-line mt-n15 image rounded-xl d-none d-md-flex"
       min-width="90%"
       min-height="200px"
       :img="background"
+      flat
     ></v-card>
   </div>
 </template>
@@ -76,8 +77,10 @@ export default {
   z-index: 2;
 }
 
-.image {
-  transform: skewX(-10deg);
-  opacity: 0.3;
+@media (min-width: 900px) {
+  .image {
+    transform: skewX(-10deg);
+    opacity: 0.9;
+  }
 }
 </style>

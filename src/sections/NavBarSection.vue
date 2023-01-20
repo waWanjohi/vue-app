@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-app-bar app elevate-on-scroll hide-on-scroll color="white">
+  <div>
+    <v-app-bar app flat elevate-on-scroll color="white">
       <v-app-bar-nav-icon class="d-lg-none" @click.stop="drawer = !drawer" />
       <v-toolbar-title>
         <v-img :src="logo" height="auto" width="140" />
@@ -64,7 +64,7 @@
         </div>
       </v-list>
     </v-navigation-drawer>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">
