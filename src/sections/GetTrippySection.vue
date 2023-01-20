@@ -73,7 +73,7 @@ export default {
 
 <style scoped>
 .stack-top {
-  z-index: 9;
+  z-index: 2;
 }
 
 .image {

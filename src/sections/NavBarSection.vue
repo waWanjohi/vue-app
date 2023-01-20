@@ -1,6 +1,6 @@
 <template>
-  <v-container class="show-border-line">
-    <v-app-bar app flat>
+  <v-container>
+    <v-app-bar app elevate-on-scroll hide-on-scroll color="white">
       <v-app-bar-nav-icon class="d-lg-none" @click.stop="drawer = !drawer" />
       <v-toolbar-title>
         <v-img :src="logo" height="auto" width="140" />
