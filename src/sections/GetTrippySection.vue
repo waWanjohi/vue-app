@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column align-center mx-auto">
+  <div class="d-flex flex-column align-center mx-auto justify-space-between">
     <v-card-text>
       <div class="center">
         <br /><br />
@@ -10,7 +10,8 @@
     </v-card-text>
 
     <v-container
-      class="d-flex flex-column flex-md-row justify-center align-center justify-md-space-evenly stack-top mb-n12"
+      class="d-flex flex-column flex-md-row justify-center align-center justify-md-space-between"
+      fluid
     >
       <FancyCard
         v-for="(item, index) in fancyCardItems"
@@ -22,13 +23,13 @@
         :isLarge="item.isLarge"
       />
     </v-container>
-    <v-card
+    <!-- <v-card
       class="show-border-line mt-n15 image rounded-xl d-none d-md-flex"
       min-width="90%"
       min-height="200px"
       :img="background"
       flat
-    ></v-card>
+    ></v-card> -->
   </div>
 </template>
 
@@ -42,19 +43,19 @@ export default {
     fancyCardItems: [
       {
         isLarge: false,
-        background: "https://www.tripitaca.com/_nuxt/img/Packages.60534d7.jpeg",
-        title: "Packages",
-        upperText: "Customized packages for you.",
-        lowerText:
-          "Our hosts and hotels can customize a package for you based on your individual needs. Get a package directly from them and save more than 40%. There are no travel agents or middlemen, so you don't have to pay any extra or hidden fees.",
-      },
-      {
-        isLarge: true,
         background: "https://www.tripitaca.com/_nuxt/img/Offers.2c8930b.jpeg",
         title: "Flexible Payments",
         upperText: "Pay in installments.",
         lowerText:
           "You don't have to break the bank to travel, you can now pay for your trips in installments either before or after departure at a 0% interest fee.",
+      },
+      {
+        isLarge: true,
+        background: "https://www.tripitaca.com/_nuxt/img/Packages.60534d7.jpeg",
+        title: "Packages",
+        upperText: "Customized packages for you.",
+        lowerText:
+          "Our hosts and hotels can customize a package for you based on your individual needs. Get a package directly from them and save more than 40%. There are no travel agents or middlemen, so you don't have to pay any extra or hidden fees.",
       },
       {
         isLarge: false,
@@ -72,15 +73,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.stack-top {
-  z-index: 2;
-}
-
-@media (min-width: 900px) {
-  .image {
-    transform: skewX(-10deg);
-    opacity: 0.9;
-  }
-}
-</style>
+<style scoped></style>

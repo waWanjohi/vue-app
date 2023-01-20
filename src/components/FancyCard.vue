@@ -1,40 +1,30 @@
 <template>
-  <div class="rounded-lg mx-auto mt-5">
-    <v-card
-      rounded
-      class="rounded-lg mb-4"
-      :class="isLarge ? `large-card` : ``"
-      :width="240"
-      :height="400"
-      color="#a303031e"
-      hover
-      :elevation="isLarge ? 15 : 1"
-    >
+  <v-card
+    :loading="loading"
+    class="mx-auto my-12"
+    max-width="374"
+    :class="{ unfocused: !isLarge }"
+  >
+    <template slot="progress">
+      <v-progress-linear
+        color="deep-purple"
+        height="10"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+
+    <v-img height="280" :src="image"></v-img>
+
+    <v-card-title> {{ title }}</v-card-title>
+
+    <v-card-text class="black--text">
+      <div class="my-4 text-subtitle-1">{{ upperText }}</div>
+
       <div>
-        <v-card-text class="black--text">
-          <div>
-            <br /><br />
-            <h2 class="font-weight-black">{{ title }}</h2>
-            <br />
-            <hr class="line" />
-            <br />
-            <div
-              class="d-flex flex-column text-subtitle"
-              :class="isLarge ? `large-card` : ``"
-            >
-              <div class="font-weight-medium">
-                {{ upperText }}
-              </div>
-              <br />
-              <div class="font-weight-medium">
-                {{ lowerText }}
-              </div>
-            </div>
-          </div>
-        </v-card-text>
+        {{ lowerText }}
       </div>
-    </v-card>
-  </div>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts">
@@ -42,39 +32,28 @@ export default {
   name: "FancyCard",
   props: ["image", "title", "upperText", "lowerText", "isLarge"],
 
+  data: () => ({
+    loading: false,
+    selection: 1,
+  }),
+
   methods: {
     backgroundStyles(image: string) {
       return {
         "background-image": `url(${image})`,
       };
     },
+    reserve() {
+      this.loading = true;
+
+      setTimeout(() => (this.loading = false), 2000);
+    },
   },
 };
 </script>
 
 <style scoped>
-.bg-dark {
-  color: #fff;
-  background: #000;
-  opacity: 60%;
-  height: 100%;
-}
-.line {
-  width: 60px;
-  height: 2px;
-  border: none;
-  background-color: #ff0800;
-}
-.fancy-card {
-  background-size: cover;
-  background: #a303033a;
-}
-
-@media (min-width: 900px) {
-  .large-card {
-    height: 500px;
-    width: 320;
-    font-size: larger;
-  }
+.unfocused {
+  opacity: 0.6;
 }
 </style>

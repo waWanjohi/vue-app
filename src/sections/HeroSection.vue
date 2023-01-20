@@ -1,5 +1,5 @@
 <template>
-  <div
+  <v-container
     class="d-flex flex-column flex-md-row justify-center justify-md-space-around rounded-t-0 hero-section rounded-xl"
   >
     <div class="flex-column d-flex justify-center align-center">
@@ -16,7 +16,7 @@
         <v-img class="tilted-right" :src="image" />
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">
