@@ -18,11 +18,8 @@
     </v-row>
 
     <div class="send-front">
+      <p class="h4">Start paying for your trips in installments Today!</p>
       <BookingCard />
-      <v-card-text class="text-md-subtitle">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quis
-        option!
-      </v-card-text>
     </div>
   </v-container>
 </template>
