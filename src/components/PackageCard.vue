@@ -1,46 +1,33 @@
 <template>
-  <v-card class="mx-5 my-12 rounded-xl" min-width="374" elevation="1">
-    <v-img height="250" :src="photoUrl"></v-img>
+  <div>
+    <v-card
+      class="rounded-lg"
+      :img="photoUrl"
+      min-width="246"
+      min-height="267"
+      elevation="1"
+    >
+      <div class="d-flex justify-end">
+        <v-btn class="rounded-xl primary--text font-weight-black mr-5 mt-5">
+          ${{ amount }}
+        </v-btn>
+      </div>
+    </v-card>
+    <p class="font-weight-bold text-left text-subtitle py-3">
+      Enjoy the beauty of {{ title }}
+    </p>
 
-    <v-progress-linear
-      :indeterminate="loading"
-      :active="loading"
-    ></v-progress-linear>
-
-    <v-card-title>{{ title }}</v-card-title>
-    <v-card-text>
-      <span>{{ subtitle }}</span>
-      <v-chip flat> {{ guests }} Nights </v-chip>
-      <v-chip flat>{{ nights }} Nights</v-chip>
-    </v-card-text>
-
-    <v-card-text class="d-flex mt-n2"> </v-card-text>
-
-    <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group v-model="selection" color="primary">
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
-    <v-card-actions class="d-flex align-center justify-center">
-      <v-btn color="primary" outlined @click="reserve"> Reserve </v-btn>
-    </v-card-actions>
-  </v-card>
+    <p class="text--secondary">
+      <Icon icon="la:map-marker" /> {{ subtitle }}, {{ subtitle }}
+    </p>
+  </div>
 </template>
 
 <script lang="ts">
+import { Icon } from "@iconify/vue2";
 export default {
   name: "PackageCard",
+  components: { Icon },
   props: [
     "name",
     "photoUrl",

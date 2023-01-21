@@ -1,24 +1,22 @@
 <template>
   <v-container>
-    <h1 class="text--primary font-weight-black">Packages</h1>
+    <h1 class="text--primary font-weight-black">
+      Explore Top Destinations <Icon icon="noto-v1:airplane" />
+    </h1>
     <br />
     <div class="d-flex">
-      <PackagesDrawer :items="items" />
-      <v-container class="cards-section">
-        <div class="mb-6 d-flex align-center justify-space-between no-overflow">
+      <v-container>
+        <v-row class="cols-12">
           <PackageCard
+            class="col-4"
             v-for="(item, index) in $store.state.packageItems"
             :key="index"
-            :guests="item.guests"
-            :nights="item.nights"
+            :photo-url="item.photoUrl"
             :title="item.title"
             :amount="item.amount"
-            :from="item.from"
             :subtitle="item.subtitle"
-            :btn-title="item.btnTitle"
-            :photo-url="item.photoUrl"
           />
-        </div>
+        </v-row>
       </v-container>
     </div>
   </v-container>
@@ -26,19 +24,26 @@
 
 <script lang="ts">
 import PackageCard from "@/components/PackageCard.vue";
-import PackagesDrawer from "@/components/PackagesDrawer.vue";
+import { Icon } from "@iconify/vue2";
+import { Item } from "@/types/item";
 
 export default {
   name: "PackageSection",
-  components: { PackageCard, PackagesDrawer },
+  components: { PackageCard, Icon },
   data: () => ({
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard" },
       { title: "Photos", icon: "mdi-image" },
       { title: "About", icon: "mdi-help-box" },
     ],
-    right: null,
+    index: 2,
   }),
+
+  methods: {
+    visibleItems(): Item[] {
+      return this.$store.state.packageItems.slice(this.index - 2, this.index);
+    },
+  },
 };
 </script>
 
