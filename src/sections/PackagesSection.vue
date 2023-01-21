@@ -2,34 +2,43 @@
   <v-container>
     <h1 class="text--primary font-weight-black">Packages</h1>
     <br />
-    <v-container class="cards-section">
-      <div class="mb-6 d-flex justify-space-between no-overflow">
-        <PackageCard
-          v-for="(item, index) in $store.state.packageItems"
-          :key="index"
-          :guests="item.guests"
-          :nights="item.nights"
-          :title="item.title"
-          :amount="item.amount"
-          :from="item.from"
-          :subtitle="item.subtitle"
-          :btn-title="item.btnTitle"
-          :photo-url="item.photoUrl"
-        />
-      </div>
-    </v-container>
-    <div class="d-flex justify-end mt-n9 mr-n2">
-      <v-btn class="explore-btn font-weight-medium">Explore</v-btn>
+    <div class="d-flex">
+      <PackagesDrawer :items="items" />
+      <v-container class="cards-section">
+        <div class="mb-6 d-flex align-center justify-space-between no-overflow">
+          <PackageCard
+            v-for="(item, index) in $store.state.packageItems"
+            :key="index"
+            :guests="item.guests"
+            :nights="item.nights"
+            :title="item.title"
+            :amount="item.amount"
+            :from="item.from"
+            :subtitle="item.subtitle"
+            :btn-title="item.btnTitle"
+            :photo-url="item.photoUrl"
+          />
+        </div>
+      </v-container>
     </div>
   </v-container>
 </template>
 
 <script lang="ts">
 import PackageCard from "@/components/PackageCard.vue";
+import PackagesDrawer from "@/components/PackagesDrawer.vue";
 
 export default {
   name: "PackageSection",
-  components: { PackageCard },
+  components: { PackageCard, PackagesDrawer },
+  data: () => ({
+    items: [
+      { title: "Dashboard", icon: "mdi-view-dashboard" },
+      { title: "Photos", icon: "mdi-image" },
+      { title: "About", icon: "mdi-help-box" },
+    ],
+    right: null,
+  }),
 };
 </script>
 
@@ -37,10 +46,11 @@ export default {
 .cards-section {
   overflow-x: auto;
 }
+
+.cards-section::-webkit-scrollbar {
+  display: none;
+}
 @media (max-width: 800px) {
-  .cards-section::-webkit-scrollbar {
-    display: none;
-  }
   .cards-section {
     display: flex;
     overflow-x: auto;

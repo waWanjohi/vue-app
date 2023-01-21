@@ -1,82 +1,58 @@
 <template>
-  <v-container
-    class="d-flex flex-column flex-md-row justify-center justify-md-space-around rounded-t-0 hero-section rounded-xl"
-  >
-    <div class="flex-column d-flex justify-center align-center">
-      <v-card-title class="text-h4 text-md-h3 font-weight-bold text-center"
-        >Enjoy Your Vacation</v-card-title
-      >
-      <v-card-text class="text-md-subtitle text-center">
+  <v-container class="hero-section">
+    <v-row class="fill-height">
+      <v-col color="primary" class="d-flex flex-column justify-center">
+        <p class="text-h2 font-weight-bold">Let's get</p>
+        <p class="primary--text text-h1 font-weight-black">Trippy!</p>
+      </v-col>
+      <v-col fill-height>
+        <div class="mt-8">
+          <GridCard :col1="col1" :image="image" />
+        </div>
+      </v-col>
+    </v-row>
+
+    <div class="send-front">
+      <BookingCard />
+      <v-card-text class="text-md-subtitle">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quis
-        optio!
+        option!
       </v-card-text>
-    </div>
-    <div class="d-flex align-center justify-center mt-sm-5">
-      <div class="stack borderbox">
-        <v-img class="tilted-right" :src="image" />
-      </div>
     </div>
   </v-container>
 </template>
 
 <script lang="ts">
+import BookingCard from "@/components/BookingCard.vue";
+import GridCard from "@/components/GridCard.vue";
 export default {
   name: "HeroSection",
   data: () => ({
     image:
       "https://media.istockphoto.com/id/623284160/photo/3d-rendering-outdoor-beach-bed-near-beach-with-beautiful-sky.jpg?b=1&s=170667a&w=0&k=20&c=OZSsx7zMHTnOphv1Z-hGLR4iXifGu8Z0sVYtURmHMhE=",
+    col1: "https://images.unsplash.com/photo-1534719156993-f3c9448673bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f089cfa06eb1cd7c0f654b39d8fdfd07&auto=format&fit=crop&w=1350&q=80",
   }),
+  components: { GridCard, BookingCard },
 };
 </script>
 
 <style scoped>
+.spaced {
+  letter-spacing: 10px !important;
+}
 .hero-section {
-  background-color: #f6d9d891;
-  height: 80vh;
+  min-height: 90vh;
+  position: relative;
+}
+
+.send-front {
+  position: absolute;
+  left: 0;
+  bottom: 20%;
 }
 .hero-card {
   background-color: #f6d9d891;
   overflow: hidden;
-}
-
-.stack {
-  position: relative;
-  z-index: 10;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.borderbox img {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 3px solid #fff;
-}
-.stack img {
-  background: #fff;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  padding: 10px;
-  width: 100%;
-}
-
-.stack:before {
-  /* opacity: 0.2; */
-  border: 1px solid #a30303;
-  background: #ffffff;
-  content: "";
-  /* background-image: url("https://images.unsplash.com/photo-1563911302283-d2bc129e7570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"); */
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -10;
-  -webkit-transform: rotate(-0.009turn);
-  -moz-transform: rotate(-0.009turn);
-  -ms-transform: rotate(-0.009turn);
-  transform: rotate(-0.009turn);
 }
 
 @media (min-width: 900px) {
