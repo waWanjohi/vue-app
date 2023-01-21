@@ -1,12 +1,17 @@
 <template>
   <v-container class="hero-section">
     <v-row class="fill-height">
-      <v-col color="primary" class="d-flex flex-column justify-center">
-        <p class="text-h2 font-weight-bold">Let's get</p>
-        <p class="primary--text text-h1 font-weight-black">Trippy!</p>
+      <v-col
+        color="primary"
+        class="d-flex flex-column align-center justify-center show-border-line column"
+      >
+        <p class="text-h5 text-md-h2 font-weight-bold">Let's get</p>
+        <p class="primary--text text-h3 text-md-h1 font-weight-black">
+          Trippy!
+        </p>
       </v-col>
       <v-col fill-height>
-        <div class="mt-8">
+        <div class="mt-8 d-none d-md-flex">
           <GridCard
             :image1="image1"
             :image2="image2"
@@ -17,7 +22,7 @@
       </v-col>
     </v-row>
 
-    <div class="send-front">
+    <div class="send-front d-none d-md-block">
       <v-card-text class="text-md-subtitle mb-3">
         Start paying for your trips in installments Today!
       </v-card-text>
@@ -46,9 +51,6 @@ export default {
 </script>
 
 <style scoped>
-.spaced {
-  letter-spacing: 10px !important;
-}
 .hero-section {
   min-height: 90vh;
   position: relative;
@@ -58,15 +60,5 @@ export default {
   position: absolute;
   left: 0;
   bottom: 20%;
-}
-.hero-card {
-  background-color: #f6d9d891;
-  overflow: hidden;
-}
-
-@media (min-width: 900px) {
-  .tilted-right {
-    transform: rotate(0.009turn);
-  }
 }
 </style>
