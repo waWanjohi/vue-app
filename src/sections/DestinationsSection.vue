@@ -1,36 +1,51 @@
 <template>
-  <div>
-    <v-card-text>
-      <div>
-        <br /><br />
-        <h2 class="text--primary text-center font-weight-black text-h3 mb-3">
-          Enjoy our awesome Destinations
-        </h2>
-      </div>
-    </v-card-text>
-    <v-container
-      class="mx-auto hero-card d-flex flex-column flex-md-row justify-space-between align-center rounded-xl p-4"
-      max-height="600px"
-      min-height="400px"
-    >
-      <v-container
-        class="blur d-flex justify-center align-center flex-column"
-        elevation="12"
+  <v-container>
+    <div class="d-flex flex-column justify-start align-start">
+      <p
+        class="primary--text text-subtitle font-weight-semibold text-uppercase"
       >
-        <v-card-title
-          class="text-h3 font-weight-bold flex-sm-column justify-sm-center align-sm-center"
-          >Enjoy Your Vacation</v-card-title
-        >
-        <v-card-text class="text-subtitle text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quis
-          optio!
-        </v-card-text>
-      </v-container>
-      <v-container>
-        <v-img :src="image" class="rounded-xl tilted-left" />
-      </v-container>
-    </v-container>
-  </div>
+        Check out interesting places
+      </p>
+      <p class="text--primary text-center font-weight-black text-h3">
+        Destinations
+      </p>
+    </div>
+
+    <v-carousel hide-delimiters>
+      <v-carousel-item
+        class="show-border-line d-flex justify-center align-center"
+        v-for="(slide, index) in items"
+        :key="index"
+      >
+        <div class="d-flex align-center justify-center">
+          <v-container elevation="12">
+            <v-card-title
+              class="text-h3 font-weight-bold flex-sm-column justify-start align-start pacifico-text"
+            >
+              {{ slide.title }}
+            </v-card-title>
+            <v-card-text class="text-subtitle">
+              {{ slide.about }}
+            </v-card-text>
+          </v-container>
+          <div class="show-border-line justify-center align-center">
+            <v-img
+              max-height="400"
+              max-width="500"
+              :src="slide.src ?? image"
+              class="rounded-xl stack"
+            />
+            <v-img
+              max-height="400"
+              max-width="500"
+              :src="slide.src ?? image"
+              class="rounded-xl stack-top"
+            />
+          </div>
+        </div>
+      </v-carousel-item>
+    </v-carousel>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -76,14 +91,27 @@ export default {
 </script>
 
 <style scoped>
-.hero-card {
-  background-color: #f6d9d891;
-  overflow: hidden;
-}
-
 @media (min-width: 900px) {
   .tilted-left {
-    transform: rotate(-0.009turn);
+    transform: rotate(0.009turn);
   }
+}
+
+.pacifico-text {
+  font-family: Pacifico;
+}
+.stack {
+  position: absolute;
+  z-index: 10;
+  margin-bottom: 20px;
+  display: inline-block;
+  transform: rotate(-7.84deg);
+}
+.stack-top {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 20px;
+  display: inline-block;
+  transform: rotate(7.84deg);
 }
 </style>

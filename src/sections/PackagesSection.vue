@@ -2,7 +2,9 @@
   <v-container>
     <div class="d-flex justify-space-between align-center">
       <div>
-        <p class="primary--text text-subtitle font-weight-semibold">
+        <p
+          class="primary--text text-subtitle font-weight-semibold text-uppercase"
+        >
           Explore our Packages
         </p>
         <h1 class="text--primary font-weight-black">
