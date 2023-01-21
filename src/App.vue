@@ -60,6 +60,7 @@ export default Vue.extend({
 body {
   font-family: Poppins, Hellix-Regular, "Courier New", Courier, monospace;
 }
+
 .pad-sections {
   padding: 40px !important;
 }

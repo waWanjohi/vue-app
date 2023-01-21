@@ -1,8 +1,23 @@
 <template>
   <v-container>
-    <h1 class="text--primary font-weight-black">
-      Explore Top Destinations <Icon icon="noto-v1:airplane" />
-    </h1>
+    <div class="d-flex justify-space-between align-center">
+      <div>
+        <p class="primary--text text-subtitle font-weight-semibold">
+          Explore our Packages
+        </p>
+        <h1 class="text--primary font-weight-black">
+          Explore Top Destinations <Icon icon="noto-v1:airplane" />
+        </h1>
+      </div>
+      <div>
+        <v-btn class="mx-2" outlined fab dark small link color="primary">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+        <v-btn class="mx-2" fab dark small link color="primary">
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
+      </div>
+    </div>
     <br />
     <div class="d-flex">
       <v-container>

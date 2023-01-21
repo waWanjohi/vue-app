@@ -3,7 +3,7 @@
     <v-row class="fill-height">
       <v-col
         color="primary"
-        class="d-flex flex-column align-center justify-center show-border-line column"
+        class="d-flex flex-column align-center justify-center column"
       >
         <p class="text-h5 text-md-h2 font-weight-bold">Let's get</p>
         <p class="primary--text text-h3 text-md-h1 font-weight-black">
