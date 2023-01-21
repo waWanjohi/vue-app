@@ -18,7 +18,9 @@
     </v-row>
 
     <div class="send-front">
-      <p class="h4">Start paying for your trips in installments Today!</p>
+      <v-card-text class="text-md-subtitle mb-3">
+        Start paying for your trips in installments Today!
+      </v-card-text>
       <BookingCard />
     </div>
   </v-container>

@@ -6,7 +6,10 @@
     <v-main>
       <HeroSection />
       <GetTrippySection />
-      <PackagesSection />
+
+      <section id="packages">
+        <PackagesSection />
+      </section>
       <DestinationsSection />
       <ListingsSection />
       <VideoIframeSection />
