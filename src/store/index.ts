@@ -10,9 +10,22 @@ export default new Vuex.Store({
     _packageItems: null,
   },
   getters: {
+    /**
+     *
+     * @param state
+     * @returns `Item[]`
+     */
     packageItems: (state) => state._packageItems,
   },
   mutations: {
+    /**
+     *
+     * @param state
+     * The store's state
+     * @param data
+     * Data to add to `$store._packageItems`
+     * @returns null
+     */
     setItems(state, data) {
       console.log(`adding ${data.length} items`);
       state._packageItems = data;
@@ -20,6 +33,7 @@ export default new Vuex.Store({
   },
   actions: {
     getItems(state) {
+      // Since we're getting from a static list, we don't need fetch
       state.commit(SET_ITEMS, packageItems);
     },
   },
