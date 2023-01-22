@@ -1,11 +1,15 @@
 <template>
-  <v-card flat max-width="280px">
-    <Icon :icon="image" height="72px" />
+  <v-card flat max-width="280px" class="m-4">
+    <div class="align-center justify-center d-flex">
+      <Icon :icon="image" height="72px" />
+    </div>
 
-    <p class="text-h5 font-weight-bold">{{ title }}</p>
-    <hr class="line my-1" />
-    <v-card flat min-height="150px">
-      <p class="text-subtitle-1 text--secondary">
+    <p class="text-h5 font-weight-bold text-center">{{ title }}</p>
+    <div class="d-flex align-center justify-center">
+      <hr class="line my-1" />
+    </div>
+    <v-card flat min-height="150px" class="mt-3">
+      <p class="text-subtitle-1 text--secondary text-center">
         {{ upperText }}
         {{ lowerText }}
       </p>

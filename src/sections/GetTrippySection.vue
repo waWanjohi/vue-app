@@ -1,31 +1,30 @@
 <template>
   <v-container
-    class="d-flex px-5 flex-column flex-md-row justify-center align-center justify-md-space-between mb-md-15"
+    class="d-flex px-5 flex-column justify-center align-center justify-md-space-between mb-md-15"
   >
-    <v-spacer />
-    <v-card
-      max-width="280px"
-      flat
-      class="d-flex flex-column justify-center align-start"
-    >
-      <p class="primary--text font-weight-semibold text-uppercase">
+    <div class="d-flex flex-column justify-center">
+      <p class="primary--text font-weight-semibold text-center text-uppercase">
         Top value for you
       </p>
-      <p class="text--primary font-weight-black text-h4">
+      <p class="text--primary font-weight-black text-h4 text-center">
         Why Get this Trippy?
       </p>
-      <p class="text--secondary">
+      <p class="text--secondary text-center">
         Don’t go looking for great deals, great deals will come looking for you.
       </p>
-    </v-card>
-    <FancyCard
-      v-for="(item, index) in fancyCardItems"
-      :key="index"
-      :title="item.title"
-      :upper-text="item.upperText"
-      :lower-text="item.lowerText"
-      :image="item.background"
-    />
+    </div>
+    <v-container
+      class="d-flex flex-sm-row flex-column justify-space-between align-center"
+    >
+      <FancyCard
+        v-for="(item, index) in fancyCardItems"
+        :key="index"
+        :title="item.title"
+        :upper-text="item.upperText"
+        :lower-text="item.lowerText"
+        :image="item.background"
+      />
+    </v-container>
   </v-container>
 </template>
 
