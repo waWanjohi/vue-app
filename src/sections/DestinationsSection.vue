@@ -1,6 +1,6 @@
 <template>
   <v-container class="py-7 d-flex flex-column mb-md-15">
-    <div class="d-flex flex-column justify-start align-start mt-6">
+    <div class="d-flex flex-column justify-center align-center mt-6">
       <p
         class="primary--text text-subtitle font-weight-semibold text-uppercase"
       >
