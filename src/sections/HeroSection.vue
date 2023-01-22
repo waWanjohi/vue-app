@@ -83,14 +83,16 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="date"
-                      label="Checkin Date"
-                      prepend-icon="mdi-calendar"
+                      outlined
+                      v-model="checkinDate"
+                      label="Check In Date"
+                      prepend-inner-icon="mdi-calendar"
                       v-bind="attrs"
                       v-on="on"
                     ></v-text-field>
                   </template>
                   <v-date-picker
+                    no-title
                     :max="today()"
                     min="1950-01-01"
                   ></v-date-picker>
@@ -105,14 +107,17 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="date"
-                      label="Checkout Date"
-                      prepend-icon="mdi-calendar"
+                      outlined
+                      readonly
+                      v-model="checkoutDate"
+                      label="Check Out Date"
+                      prepend-inner-icon="mdi-calendar"
                       v-bind="attrs"
                       v-on="on"
                     ></v-text-field>
                   </template>
                   <v-date-picker
+                    no-title
                     :max="today()"
                     min="1950-01-01"
                   ></v-date-picker>
@@ -149,7 +154,8 @@ export default {
     popup: false,
     tab: null,
     activePicker: null,
-    date: null,
+    checkinDate: null,
+    checkoutDate: null,
     image1:
       "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
     image2:
@@ -162,9 +168,9 @@ export default {
   components: { GridCard, BookingCard, Icon },
   methods: {
     today() {
-      return new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-        .toISOString()
-        .substr(0, 10);
+      return new Date(
+        Date.now() - new Date().getTimezoneOffset() * 60000
+      ).toISOString();
     },
   },
 };
