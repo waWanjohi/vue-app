@@ -19,7 +19,7 @@
       >
         <v-carousel-item v-for="slide in items" :key="slide.title">
           <div
-            class="d-flex justify-space-around align-center flex-column flex-md-row order order-sm-last"
+            class="d-flex justify-space-between align-center flex-column flex-md-row"
           >
             <v-card
               flat
@@ -96,7 +96,7 @@ export default {
 <style scoped>
 @media (min-width: 900px) {
   .tilted-left {
-    transform: rotate(0.02turn);
+    transform: rotate(0.008turn);
   }
 }
 
