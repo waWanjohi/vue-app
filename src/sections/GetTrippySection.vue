@@ -1,6 +1,6 @@
 <template>
   <v-container
-    class="d-flex px-5 flex-column flex-md-row justify-center align-start justify-md-space-between"
+    class="d-flex px-5 flex-column flex-md-row justify-center align-center justify-md-space-between mb-md-15"
   >
     <v-card
       max-width="280px"

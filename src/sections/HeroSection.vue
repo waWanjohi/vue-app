@@ -1,5 +1,5 @@
 <template>
-  <v-container class="hero-section">
+  <v-container class="hero-section mb-md-15">
     <v-row class="flex-column flex-md-row">
       <v-col
         sm

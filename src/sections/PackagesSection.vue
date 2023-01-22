@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="mb-md-15">
     <div
       class="d-flex flex-column flex-sm-row justify-space-between align-center"
     >
