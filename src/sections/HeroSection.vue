@@ -136,7 +136,7 @@
           <v-tab-item :value="'tab-2'">
             <v-card flat>
               <v-card-text class="text-center primary--text"
-                >Coming soon ...</v-card-text
+                >Awesome Packages Coming soon ...</v-card-text
               >
             </v-card>
           </v-tab-item>
