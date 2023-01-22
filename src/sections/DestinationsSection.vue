@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-7">
+  <v-container class="py-7 d-flex flex-column">
     <div class="d-flex flex-column justify-start align-start mt-6">
       <p
         class="primary--text text-subtitle font-weight-semibold text-uppercase"
@@ -10,7 +10,7 @@
         Destinations
       </p>
     </div>
-    <div class="mt-7 show-border-line d-flex slign-center justify-center">
+    <div class="mt-7 d-flex align-center justify-center">
       <v-carousel
         hide-delimiter-background
         hide-delimiters
@@ -18,7 +18,9 @@
         :show-arrows="false"
       >
         <v-carousel-item v-for="slide in items" :key="slide.title">
-          <div class="d-flex justify-space-around align-center">
+          <div
+            class="d-flex justify-space-around align-center flex-column flex-md-row order order-sm-last"
+          >
             <v-card
               flat
               class="d-flex justify-space-between align-center"
