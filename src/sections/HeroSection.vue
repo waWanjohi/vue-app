@@ -68,77 +68,10 @@
         </v-tabs>
         <v-tabs-items v-model="tab">
           <v-tab-item :value="'tab-1'">
-            <v-card
-              flat
-              class="d-flex flex-column align-center mt-4 justify-center"
-            >
-              <v-text-field
-                outlined
-                label="Location"
-                prepend-inner-icon="mdi-map-marker"
-              ></v-text-field>
-              <div>
-                <v-menu
-                  :close-on-content-click="false"
-                  transition="scale-transition"
-                  min-width="auto"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      outlined
-                      v-model="checkinDate"
-                      label="Check In Date"
-                      prepend-inner-icon="mdi-calendar"
-                      v-bind="attrs"
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    no-title
-                    :max="today()"
-                    min="1950-01-01"
-                  ></v-date-picker>
-                </v-menu>
-              </div>
-
-              <div>
-                <v-menu
-                  :close-on-content-click="false"
-                  transition="scale-transition"
-                  min-width="auto"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      outlined
-                      readonly
-                      v-model="checkoutDate"
-                      label="Check Out Date"
-                      prepend-inner-icon="mdi-calendar"
-                      v-bind="attrs"
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    no-title
-                    :max="today()"
-                    min="1950-01-01"
-                  ></v-date-picker>
-                </v-menu>
-              </div>
-              <v-btn
-                class="text-capitalize rounded-lg mt-2 d-md-none"
-                color="primary"
-                min-width="70%"
-                >explore</v-btn
-              >
-            </v-card>
+            <StaysFormSection />
           </v-tab-item>
           <v-tab-item :value="'tab-2'">
-            <v-card flat>
-              <v-card-text class="text-center primary--text"
-                >Awesome Packages Coming soon ...</v-card-text
-              >
-            </v-card>
+            <PackagesFormSection />
           </v-tab-item>
         </v-tabs-items>
       </v-card>
@@ -149,15 +82,17 @@
 <script lang="ts">
 import BookingCard from "@/components/BookingCard.vue";
 import GridCard from "@/components/GridCard.vue";
+
 import { Icon } from "@iconify/vue2";
+import StaysFormSection from "./StaysFormSection.vue";
+import PackagesFormSection from "./PackagesFormSection.vue";
 export default {
   name: "HeroSection",
   data: () => ({
     popup: false,
     tab: null,
     activePicker: null,
-    checkinDate: null,
-    checkoutDate: null,
+
     image1:
       "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
     image2:
@@ -166,14 +101,15 @@ export default {
       "https://images.unsplash.com/photo-1534719156993-f3c9448673bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f089cfa06eb1cd7c0f654b39d8fdfd07&auto=format&fit=crop&w=1350&q=80",
     image4:
       "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+
+    peopleOptions: ["Adults", "Children", "Infants"],
   }),
-  components: { GridCard, BookingCard, Icon },
-  methods: {
-    today() {
-      return new Date(
-        Date.now() - new Date().getTimezoneOffset() * 60000
-      ).toISOString();
-    },
+  components: {
+    GridCard,
+    BookingCard,
+    Icon,
+    StaysFormSection,
+    PackagesFormSection,
   },
 };
 </script>
