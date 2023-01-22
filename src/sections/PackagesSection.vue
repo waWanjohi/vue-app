@@ -126,19 +126,4 @@ export default {
     padding: 20px;
   }
 }
-.explore-btn {
-  color: white;
-  background-image: linear-gradient(
-    90deg,
-    #ff0800,
-    0,
-    #ff0800,
-    40%,
-    #a20027 60%,
-    #710a26 90%,
-    #42101d
-  );
-  top: 0;
-  right: 0;
-}
 </style>
