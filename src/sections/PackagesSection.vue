@@ -43,7 +43,7 @@
     <br />
     <div class="d-flex justify-space-between cards-section">
       <v-list-item
-        v-for="(item, index) in $store.state.packageItems"
+        v-for="(item, index) in items"
         :key="index"
         :id="'list-item-' + index"
       >
@@ -62,25 +62,30 @@
 <script lang="ts">
 import PackageCard from "@/components/PackageCard.vue";
 import { Icon } from "@iconify/vue2";
-
+import { GET_ITEMS } from "@/types/enums";
 export default {
   name: "PackageSection",
   components: { PackageCard, Icon },
   data: () => ({
     index: 0,
+    items: null,
   }),
+
+  created() {
+    this.$store.dispatch(GET_ITEMS);
+    this.items = this.$store.getters.packageItems;
+  },
 
   methods: {
     isStartOfList(): boolean {
       return this.index === 0;
     },
     isEndOfList(): boolean {
-      return this.index === this.$store.state.packageItems.length - 1;
+      return this.index === this.items.length - 1;
     },
     nextItem(): number {
       this.index += 2;
-      if (this.index >= this.$store.state.packageItems.length)
-        this.index = this.$store.state.packageItems.length - 1;
+      if (this.index >= this.items.length) this.index = this.items.length - 1;
       return this.index;
     },
     previousItem(): number {
