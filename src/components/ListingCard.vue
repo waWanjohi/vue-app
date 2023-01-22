@@ -1,55 +1,32 @@
 <template>
-  <v-card class="listing-card rounded-lg" max-width="500">
-    <div class="d-flex">
-      <div>
-        <v-icon color="#fff" size="70">{{ icon ?? defaultIcon }}</v-icon>
-      </div>
-      <div class="right-section">
-        <h2 class="listing-card-header">{{ title }}</h2>
-        <p class="listing-card-text">
-          {{ description }}
-        </p>
-      </div>
+  <v-card
+    class="listing-card rounded-lg d-flex flex-column align-center p-5"
+    max-width="300"
+    flat
+  >
+    <div>
+      <Icon :icon="icon" height="50px" />
+    </div>
+    <div>
+      <p class="font-weight-black text-center text-subtitle">{{ title }}</p>
+    </div>
+    <hr class="line" />
+    <div>
+      <p class="text-center text--secondary">{{ description }}</p>
     </div>
   </v-card>
 </template>
 
 <script lang="ts">
+import { Icon } from "@iconify/vue2";
 export default {
   name: "ListingCard",
-  props: ["image", "title", "description", "icon"],
+  props: ["title", "description", "icon"],
   data: () => ({
     defaultIcon: "mdi-passport",
   }),
+  components: { Icon },
 };
 </script>
 
-<style scoped>
-.image {
-  filter: invert(100%);
-}
-.listing-card {
-  display: flex;
-  align-items: center;
-  margin: 20px 0;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 20px;
-  color: #fff;
-}
-
-.listing-card-header {
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.listing-card-text {
-  font-size: 16px;
-  margin: 8px auto 20px;
-}
-
-.right-section {
-  padding: 0 12px;
-  margin-bottom: -16px;
-}
-</style>
+<style scoped></style>

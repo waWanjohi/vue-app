@@ -7,7 +7,9 @@
       flat
       class="d-flex flex-column justify-center align-start"
     >
-      <p class="primary--text font-weight-semibold">Top value for you</p>
+      <p class="primary--text font-weight-semibold text-uppercase">
+        Top value for you
+      </p>
       <p class="text--primary font-weight-black text-h4">
         Why Get this Trippy?
       </p>

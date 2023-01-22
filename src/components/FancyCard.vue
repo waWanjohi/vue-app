@@ -22,11 +22,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.line {
-  width: 40px;
-  height: 4px;
-  border: none;
-  background-color: #ff0800;
-}
-</style>
+<style scoped></style>

@@ -9,7 +9,6 @@
       <PackagesSection />
       <DestinationsSection />
       <ListingsSection />
-      <VideoIframeSection />
       <BottomFooter />
     </v-main>
   </v-app>
@@ -24,7 +23,6 @@ import PackagesSection from "@/sections/PackagesSection.vue";
 import BottomFooter from "./sections/BottomFooterSection.vue";
 import DestinationsSection from "./sections/DestinationsSection.vue";
 import ListingsSection from "./sections/ListingsSection.vue";
-import VideoIframeSection from "./sections/VideoIframeSection.vue";
 
 export default Vue.extend({
   name: "App",
@@ -36,7 +34,6 @@ export default Vue.extend({
     BottomFooter,
     DestinationsSection,
     ListingsSection,
-    VideoIframeSection,
   },
   data: () => ({}),
 });
@@ -64,6 +61,13 @@ body {
 
 .pad-sections {
   padding: 40px !important;
+}
+
+.line {
+  width: 40px;
+  height: 4px;
+  border: none;
+  background-color: #ff0800;
 }
 
 @media (max-width: 800px) {
