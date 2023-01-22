@@ -14,7 +14,7 @@ export default new Vuex.Store({
   },
   mutations: {
     setItems(state, data) {
-      console.log(`setting items to ${data}`);
+      console.log(`adding ${data.length} items`);
       state._packageItems = data;
     },
   },

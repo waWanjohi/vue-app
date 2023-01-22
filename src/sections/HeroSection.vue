@@ -4,7 +4,7 @@
       <v-col
         sm
         color="primary"
-        class="d-flex flex-column align-center align-sm-start lign-start justify-center"
+        class="d-flex flex-column align-center align-md-center align-lg-start justify-center"
       >
         <div class="pb-5">
           <p
@@ -12,7 +12,9 @@
           >
             Let's get
           </p>
-          <p class="primary--text text-h3 text-md-h1 font-weight-black">
+          <p
+            class="primary--text text-h3 text-md-h1 font-weight-black text-center"
+          >
             Trippy!
           </p>
         </div>

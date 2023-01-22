@@ -5,10 +5,14 @@
     <NavBarSection />
     <v-main class="bg--white main-section">
       <HeroSection />
+      <v-spacer />
       <GetTrippySection />
+      <v-spacer />
       <PackagesSection />
+      <v-spacer />
       <DestinationsSection />
       <ListingsSection />
+      <v-spacer />
       <BottomFooter />
     </v-main>
   </v-app>
