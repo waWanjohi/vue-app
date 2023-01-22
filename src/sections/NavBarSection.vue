@@ -37,7 +37,9 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app temporary>
       <v-list-item>
-        <v-list-item-avatar color="primary" />
+        <v-list-item-avatar color="primary">
+          <v-img :src="drawerLogo" />
+        </v-list-item-avatar>
 
         <v-list-item-content>
           <v-list-item-title class="font-weight-black">
@@ -79,6 +81,8 @@ export default {
       selectedItem: 1,
       items: ["Packages", "Places to Stay", "List Your Property"],
       logo: "https://www.tripitaca.com/_nuxt/img/tripitacalogo2.2b5908a.png",
+      drawerLogo:
+        "https://www.tripitaca.com/_nuxt/icons/icon_512x512.8844cc.png",
     };
   },
   methods: {

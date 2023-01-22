@@ -8,7 +8,7 @@
     </div>
 
     <v-container
-      class="justify-space-between align-center mb-3 d-flex flex-column flex-md-row"
+      class="justify-space-between align-center mb-3 d-flex flex-column flex-sm-row"
     >
       <ListingCard
         class="mt-3 mx-4"

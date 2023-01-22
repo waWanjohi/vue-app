@@ -150,10 +150,10 @@ export default {
     tab: null,
     activePicker: null,
     date: null,
+    image1:
+      "https://images.unsplash.com/photo-1611048267451-e6ed903d4a38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
     image2:
       "https://images.unsplash.com/photo-1470755148323-3b7582338b8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-    image1:
-      "https://media.istockphoto.com/id/623284160/photo/3d-rendering-outdoor-beach-bed-near-beach-with-beautiful-sky.jpg?b=1&s=170667a&w=0&k=20&c=OZSsx7zMHTnOphv1Z-hGLR4iXifGu8Z0sVYtURmHMhE=",
     image3:
       "https://images.unsplash.com/photo-1534719156993-f3c9448673bf?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f089cfa06eb1cd7c0f654b39d8fdfd07&auto=format&fit=crop&w=1350&q=80",
     image4:
