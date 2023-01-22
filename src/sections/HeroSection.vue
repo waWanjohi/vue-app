@@ -20,6 +20,7 @@
           class="text-capitalize rounded-lg mt-2 d-md-none"
           color="primary"
           min-width="70%"
+          @click.stop="popup = !popup"
           >explore</v-btn
         >
       </v-col>
@@ -41,15 +42,46 @@
       </v-card-text>
       <BookingCard />
     </div>
+
+    <v-navigation-drawer v-model="popup" width="100%" absolute>
+      <v-list-item>
+        <div class="d-flex align-center" @click="popup = !popup" v-ripple>
+          <Icon class="primary--text" height="30px" icon="la:undo" />
+          <p class="primary--text text-center text-caption mt-4 ml-3">
+            Go back
+          </p>
+        </div>
+      </v-list-item>
+
+      <v-card flat>
+        <v-tabs v-model="tab" centered icons-and-text>
+          <v-tabs-slider></v-tabs-slider>
+
+          <v-tab href="#tab-1">
+            Stays
+            <Icon icon="emojione:hotel" height="30px" />
+          </v-tab>
+          <v-tab href="#tab-2">
+            Packages
+            <Icon icon="emojione:briefcase" height="30px" />
+          </v-tab>
+        </v-tabs>
+      </v-card>
+    </v-navigation-drawer>
   </v-container>
 </template>
 
 <script lang="ts">
 import BookingCard from "@/components/BookingCard.vue";
 import GridCard from "@/components/GridCard.vue";
+import { Icon } from "@iconify/vue2";
 export default {
   name: "HeroSection",
   data: () => ({
+    popup: false,
+    tab: null,
+
+    text: "Some Random Text ...",
     image2:
       "https://images.unsplash.com/photo-1470755148323-3b7582338b8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
     image1:
@@ -59,7 +91,7 @@ export default {
     image4:
       "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   }),
-  components: { GridCard, BookingCard },
+  components: { GridCard, BookingCard, Icon },
 };
 </script>
 
