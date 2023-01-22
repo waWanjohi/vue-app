@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app flat inverted-scroll elevate-on-scroll color="white">
+    <v-app-bar app flat elevate-on-scroll elevation="5" color="white">
       <v-app-bar-nav-icon class="d-lg-none" @click.stop="drawer = !drawer" />
 
       <v-container class="d-flex">
