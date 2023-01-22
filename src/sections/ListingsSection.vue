@@ -52,5 +52,3 @@ export default {
   components: { ListingCard },
 };
 </script>
-
-<style scoped></style>
