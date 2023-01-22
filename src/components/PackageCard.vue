@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-card
+      v-ripple
       class="rounded-lg"
       :img="photoUrl"
       min-width="246"

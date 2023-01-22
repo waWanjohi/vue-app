@@ -48,7 +48,7 @@
         :id="'list-item-' + index"
       >
         <PackageCard
-          class="mx-4"
+          class="mx-4 package-card"
           :photo-url="item.photoUrl"
           :title="item.title"
           :amount="item.amount"
@@ -102,10 +102,12 @@ export default {
 </script>
 
 <style scoped>
+.package-card:hover {
+  cursor: pointer;
+}
 .cards-section {
   overflow-x: auto;
 }
-
 .cards-section::-webkit-scrollbar {
   display: none;
 }
