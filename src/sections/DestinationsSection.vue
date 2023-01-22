@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <div class="d-flex flex-column justify-start align-start">
+  <v-container class="py-7">
+    <div class="d-flex flex-column justify-start align-start mt-6">
       <p
         class="primary--text text-subtitle font-weight-semibold text-uppercase"
       >
@@ -10,41 +10,42 @@
         Destinations
       </p>
     </div>
-
-    <v-carousel hide-delimiters>
-      <v-carousel-item
-        class="show-border-line d-flex justify-center align-center"
-        v-for="(slide, index) in items"
-        :key="index"
+    <div class="mt-7 show-border-line d-flex slign-center justify-center">
+      <v-carousel
+        hide-delimiter-background
+        hide-delimiters
+        cycle
+        :show-arrows="false"
       >
-        <div class="d-flex align-center justify-center">
-          <v-container elevation="12">
-            <v-card-title
-              class="text-h3 font-weight-bold flex-sm-column justify-start align-start pacifico-text"
+        <v-carousel-item v-for="slide in items" :key="slide.title">
+          <div class="d-flex justify-space-around align-center">
+            <v-card
+              flat
+              class="d-flex justify-space-between align-center"
+              max-width="400"
             >
-              {{ slide.title }}
-            </v-card-title>
-            <v-card-text class="text-subtitle">
-              {{ slide.about }}
-            </v-card-text>
-          </v-container>
-          <div class="show-border-line justify-center align-center">
-            <v-img
-              max-height="400"
-              max-width="500"
-              :src="slide.src ?? image"
-              class="rounded-xl stack"
-            />
-            <v-img
-              max-height="400"
-              max-width="500"
-              :src="slide.src ?? image"
-              class="rounded-xl stack-top"
-            />
+              <div>
+                <p class="pacifico-text text-center font-weight-black text-h2">
+                  {{ slide.title }}
+                </p>
+                <p>
+                  {{ slide.about }}
+                </p>
+              </div>
+            </v-card>
+            <v-card color="white" elevation="10" class="mt-5 mr-7">
+              <v-img
+                :src="slide.src"
+                max-height="300"
+                max-width="500"
+                class="tilted-left"
+                elevation="12"
+              />
+            </v-card>
           </div>
-        </div>
-      </v-carousel-item>
-    </v-carousel>
+        </v-carousel-item>
+      </v-carousel>
+    </div>
   </v-container>
 </template>
 
@@ -81,9 +82,9 @@ export default {
       },
       {
         src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
-        title: "Mombasa",
+        title: "Nairobi",
         about:
-          "Mombasa is the number one tourist destination in Kenya. It is situated on the Eastern coastline of Kenya next to the Indian Ocean and it is famous among tourists for its spectacular beaches. Mombasa has an assorted aquatic life, luxurious hotels as well as a very hospitable environment. Mombasa has more...",
+          "Nairobi is the second famous tourist destination in Kenya. It is situated on the Eastern coastline of Kenya next to the Indian Ocean and it is famous among tourists for its spectacular beaches. Mombasa has an assorted aquatic life, luxurious hotels as well as a very hospitable environment. Mombasa has more...",
       },
     ],
   }),
@@ -93,25 +94,11 @@ export default {
 <style scoped>
 @media (min-width: 900px) {
   .tilted-left {
-    transform: rotate(0.009turn);
+    transform: rotate(0.02turn);
   }
 }
 
 .pacifico-text {
-  font-family: Pacifico;
-}
-.stack {
-  position: absolute;
-  z-index: 10;
-  margin-bottom: 20px;
-  display: inline-block;
-  transform: rotate(-7.84deg);
-}
-.stack-top {
-  position: relative;
-  z-index: 10;
-  margin-bottom: 20px;
-  display: inline-block;
-  transform: rotate(7.84deg);
+  font-family: Pacifico !important;
 }
 </style>
