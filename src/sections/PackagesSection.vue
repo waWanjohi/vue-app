@@ -11,7 +11,7 @@
           Explore Top Destinations <Icon icon="noto-v1:airplane" />
         </h1>
       </v-container>
-      <div>
+      <div class="d-none d-sm-flex justify-space-between align-center">
         <v-btn class="mx-2" outlined fab dark small link color="primary">
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
