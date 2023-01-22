@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-4">
+  <v-container class="d-flex align-center justify-center flex-column">
     <div>
       <p class="text-center primary--text text-uppercase">
         getting to the nitty gritty
@@ -7,16 +7,18 @@
       <p class="text-center font-weight-black text-h3">Why List With Us</p>
     </div>
 
-    <div class="d-flex justify-space-between align-center">
+    <v-container
+      class="justify-space-between align-center mb-3 d-flex flex-column flex-md-row"
+    >
       <ListingCard
-        class="mb-4"
+        class="mt-3 mx-4"
         v-for="(item, i) in listItems"
         :key="i"
         :title="item.title"
         :description="item.description"
         :icon="item.icon"
       />
-    </div>
+    </v-container>
   </v-container>
 </template>
 

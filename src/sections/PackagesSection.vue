@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="d-flex justify-space-between align-center">
-      <div>
+      <v-container>
         <p
           class="primary--text text-subtitle font-weight-semibold text-uppercase"
         >
@@ -10,7 +10,7 @@
         <h1 class="text--primary font-weight-black">
           Explore Top Destinations <Icon icon="noto-v1:airplane" />
         </h1>
-      </div>
+      </v-container>
       <div>
         <v-btn class="mx-2" outlined fab dark small link color="primary">
           <v-icon>mdi-chevron-left</v-icon>

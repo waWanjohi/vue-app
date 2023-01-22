@@ -3,13 +3,30 @@
 
   <v-app>
     <NavBarSection />
-    <v-main>
-      <HeroSection />
-      <GetTrippySection />
-      <PackagesSection />
-      <DestinationsSection />
-      <ListingsSection />
-      <BottomFooter />
+    <v-main class="bg--white">
+      <div class="mt-5">
+        <HeroSection />
+      </div>
+
+      <div class="mt-5">
+        <GetTrippySection />
+      </div>
+
+      <div class="mt-5">
+        <PackagesSection />
+      </div>
+
+      <div class="mt-5">
+        <DestinationsSection />
+      </div>
+
+      <div class="mt-5">
+        <ListingsSection />
+      </div>
+
+      <div class="mt-5">
+        <BottomFooter />
+      </div>
     </v-main>
   </v-app>
 </template>
