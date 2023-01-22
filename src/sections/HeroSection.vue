@@ -1,17 +1,30 @@
 <template>
   <v-container class="hero-section">
-    <v-row class="fill-height">
+    <v-row class="flex-column flex-md-row">
       <v-col
+        sm
         color="primary"
-        class="d-flex flex-column align-center justify-center column"
+        class="d-flex flex-column align-center align-sm-start lign-start justify-center"
       >
-        <p class="text-h5 text-md-h2 font-weight-bold">Let's get</p>
-        <p class="primary--text text-h3 text-md-h1 font-weight-black">
-          Trippy!
-        </p>
+        <div class="pb-5">
+          <p
+            class="text-h5 text-md-h2 font-weight-bold text-center text-sm-start"
+          >
+            Let's get
+          </p>
+          <p class="primary--text text-h3 text-md-h1 font-weight-black">
+            Trippy!
+          </p>
+        </div>
+        <v-btn
+          class="text-capitalize rounded-lg mt-2 d-md-none"
+          color="primary"
+          min-width="70%"
+          >explore</v-btn
+        >
       </v-col>
       <v-col fill-height>
-        <div class="mt-8 d-none d-md-flex">
+        <div class="mt-8">
           <GridCard
             :image1="image1"
             :image2="image2"
