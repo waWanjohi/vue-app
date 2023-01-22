@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <div class="d-flex justify-space-between align-center">
+    <div
+      class="d-flex flex-column flex-sm-row justify-space-between align-center"
+    >
       <v-container>
         <p
           class="primary--text text-subtitle font-weight-semibold text-uppercase"
@@ -11,30 +13,48 @@
           Explore Top Destinations <Icon icon="noto-v1:airplane" />
         </h1>
       </v-container>
-      <div class="d-none d-sm-flex justify-space-between align-center">
-        <v-btn class="mx-2" outlined fab dark small link color="primary">
+      <v-container class="d-flex justify-space-between justify-sm-end nav-btns">
+        <v-btn
+          class="mx-2"
+          :outlined="isStartOfList()"
+          fab
+          dark
+          small
+          link
+          color="primary"
+          @click="scrollTo(previousItem())"
+        >
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
-        <v-btn class="mx-2" fab dark small link color="primary">
+        <v-btn
+          class="mx-2"
+          :outlined="isEndOfList()"
+          fab
+          dark
+          small
+          link
+          color="primary"
+          @click="scrollTo(nextItem())"
+        >
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
-      </div>
+      </v-container>
     </div>
     <br />
-    <div class="d-flex">
-      <v-container>
-        <v-row class="cols-12">
-          <PackageCard
-            class="col-4"
-            v-for="(item, index) in $store.state.packageItems"
-            :key="index"
-            :photo-url="item.photoUrl"
-            :title="item.title"
-            :amount="item.amount"
-            :subtitle="item.subtitle"
-          />
-        </v-row>
-      </v-container>
+    <div class="d-flex justify-space-between cards-section">
+      <v-list-item
+        v-for="(item, index) in $store.state.packageItems"
+        :key="index"
+        :id="'list-item-' + index"
+      >
+        <PackageCard
+          class="mx-4"
+          :photo-url="item.photoUrl"
+          :title="item.title"
+          :amount="item.amount"
+          :subtitle="item.subtitle"
+        />
+      </v-list-item>
     </div>
   </v-container>
 </template>
@@ -42,23 +62,40 @@
 <script lang="ts">
 import PackageCard from "@/components/PackageCard.vue";
 import { Icon } from "@iconify/vue2";
-import { Item } from "@/types/item";
 
 export default {
   name: "PackageSection",
   components: { PackageCard, Icon },
   data: () => ({
-    items: [
-      { title: "Dashboard", icon: "mdi-view-dashboard" },
-      { title: "Photos", icon: "mdi-image" },
-      { title: "About", icon: "mdi-help-box" },
-    ],
-    index: 2,
+    index: 0,
   }),
 
   methods: {
-    visibleItems(): Item[] {
-      return this.$store.state.packageItems.slice(this.index - 2, this.index);
+    isStartOfList(): boolean {
+      return this.index === 0;
+    },
+    isEndOfList(): boolean {
+      return this.index === this.$store.state.packageItems.length - 1;
+    },
+    nextItem(): number {
+      this.index += 2;
+      if (this.index >= this.$store.state.packageItems.length)
+        this.index = this.$store.state.packageItems.length - 1;
+      return this.index;
+    },
+    previousItem(): number {
+      this.index -= 2;
+      if (this.index <= 0) this.index = 0;
+      return this.index;
+    },
+    scrollTo(item: number) {
+      console.log(item);
+
+      document.getElementById(`list-item-${item}`).scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
     },
   },
 };
