@@ -52,11 +52,9 @@
           </p>
         </div>
       </v-list-item>
-
       <v-card flat>
         <v-tabs v-model="tab" centered icons-and-text>
           <v-tabs-slider></v-tabs-slider>
-
           <v-tab href="#tab-1">
             Stays
             <Icon icon="emojione:hotel" height="30px" />
@@ -66,6 +64,76 @@
             <Icon icon="emojione:briefcase" height="30px" />
           </v-tab>
         </v-tabs>
+        <v-tabs-items v-model="tab">
+          <v-tab-item :value="'tab-1'">
+            <v-card
+              flat
+              class="d-flex flex-column align-center mt-4 justify-center"
+            >
+              <v-text-field
+                outlined
+                label="Location"
+                prepend-inner-icon="mdi-map-marker"
+              ></v-text-field>
+              <div>
+                <v-menu
+                  :close-on-content-click="false"
+                  transition="scale-transition"
+                  min-width="auto"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="date"
+                      label="Checkin Date"
+                      prepend-icon="mdi-calendar"
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    :max="today()"
+                    min="1950-01-01"
+                  ></v-date-picker>
+                </v-menu>
+              </div>
+
+              <div>
+                <v-menu
+                  :close-on-content-click="false"
+                  transition="scale-transition"
+                  min-width="auto"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="date"
+                      label="Checkout Date"
+                      prepend-icon="mdi-calendar"
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    :max="today()"
+                    min="1950-01-01"
+                  ></v-date-picker>
+                </v-menu>
+              </div>
+              <v-btn
+                class="text-capitalize rounded-lg mt-2 d-md-none"
+                color="primary"
+                min-width="70%"
+                >explore</v-btn
+              >
+            </v-card>
+          </v-tab-item>
+          <v-tab-item :value="'tab-2'">
+            <v-card flat>
+              <v-card-text class="text-center primary--text"
+                >Coming soon ...</v-card-text
+              >
+            </v-card>
+          </v-tab-item>
+        </v-tabs-items>
       </v-card>
     </v-navigation-drawer>
   </v-container>
@@ -80,8 +148,8 @@ export default {
   data: () => ({
     popup: false,
     tab: null,
-
-    text: "Some Random Text ...",
+    activePicker: null,
+    date: null,
     image2:
       "https://images.unsplash.com/photo-1470755148323-3b7582338b8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
     image1:
@@ -92,6 +160,13 @@ export default {
       "https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   }),
   components: { GridCard, BookingCard, Icon },
+  methods: {
+    today() {
+      return new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+        .toISOString()
+        .substr(0, 10);
+    },
+  },
 };
 </script>
 
