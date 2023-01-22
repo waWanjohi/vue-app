@@ -1,68 +1,29 @@
 <template>
-  <div class="rounded-lg mx-auto">
-    <v-card
-      rounded
-      class="rounded-lg mb-4"
-      width="280"
-      height="450"
-      dark
-      :img="image"
-    >
-      <div class="bg-dark">
-        <v-card-text>
-          <div class="center">
-            <br /><br />
-            <h2 class="font-weight-bold">{{ title }}</h2>
-            <br />
-            <hr class="line" />
-            <br />
-            <div class="h4">
-              {{ upperText }}
-            </div>
-            <br />
-            <div class="h4">
-              {{ lowerText }}
-            </div>
-          </div>
-        </v-card-text>
-      </div>
+  <v-card flat max-width="280px" class="m-4">
+    <div class="align-center justify-center d-flex">
+      <Icon :icon="image" height="72px" />
+    </div>
+
+    <p class="text-h5 font-weight-bold text-center">{{ title }}</p>
+    <div class="d-flex align-center justify-center">
+      <hr class="line my-1" />
+    </div>
+    <v-card flat min-height="150px" class="mt-3">
+      <p class="text-subtitle-1 text--secondary text-center">
+        {{ upperText }}
+        {{ lowerText }}
+      </p>
     </v-card>
-  </div>
+  </v-card>
 </template>
 
 <script lang="ts">
+import { Icon } from "@iconify/vue2";
 export default {
   name: "FancyCard",
-  props: ["image", "title", "upperText", "lowerText"],
-
-  methods: {
-    backgroundStyles(image: string) {
-      return {
-        "background-image": `url(${image})`,
-      };
-    },
-  },
+  props: ["image", "title", "upperText", "lowerText", "isLarge"],
+  components: { Icon },
 };
 </script>
 
-<style scoped>
-.bg-dark {
-  color: #fff;
-  background: #000;
-  opacity: 60%;
-  height: 100%;
-}
-.line {
-  width: 30px;
-  height: 2px;
-  border: none;
-  background-color: #ff0800;
-}
-.fancy-card {
-  background-size: cover;
-}
-.center {
-  top: 50%;
-  left: 50%;
-}
-</style>
+<style scoped></style>

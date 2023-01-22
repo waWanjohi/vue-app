@@ -1,4 +1,6 @@
-## Project setup
+# Tripitaca Website Re-design
+
+## Project Setup
 
 ```
 yarn install

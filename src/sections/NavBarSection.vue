@@ -1,170 +1,96 @@
 <template>
-  <v-app-bar
-    app
-    height="80"
-    :extended-height="500"
-    :class="{
-      changecolor: scrollPosition > 50,
-      transparent: scrollPosition < 50,
-      borderless: scrollPosition < 50,
-    }"
-    :elevation="{ 0: scrolled() }"
-  >
-    <v-container
-      fluid
-      class="d-flex align-center justify-xl-space-between justify-lg-space-between justify-md-center justify-sm-center"
-    >
-      <v-toolbar-title>
-        <img
-          v-if="scrollPosition > 50"
-          :src="darkLogo"
-          alt="Logo"
-          class="nav-logo transparent d-none d-lg-flex d-xl-flex"
-        />
-        <img
-          v-else
-          :src="lightLogo"
-          alt="Logo"
-          class="nav-logo d-none d-lg-flex d-xl-flex"
-        />
-      </v-toolbar-title>
-      <v-card
-        v-if="scrollPosition > 50"
-        color="white"
-        height="47"
-        min-width="360"
-        class="rounded-xl searchbar d-flex justify-center"
-      >
-        <div class="d-flex flex-lg-row justify-center flex-md-row grey--text">
-          <p class="text-sm-center mt-2">Where are you going?</p>
-          <v-icon
-            height="inherit"
-            color="primary"
-            :class="{ hide: scrollPosition < 50 }"
-          >
-            mdi-magnify
-          </v-icon>
-        </div>
-      </v-card>
-      <div class="justify-space-evenly d-none d-lg-flex d-xl-flex ml-n12">
-        <v-toolbar-title
-          class="tile font-weight-bold"
-          v-for="(item, index) in menuItems"
-          :key="index"
-          :class="{
-            darkText: scrollPosition > 50,
-            lightText: scrollPosition < 50,
-          }"
-        >
-          <p
-            v-if="
-              scrollPosition < 50 ||
-              (scrollPosition > 50 && item.toBeHidden === false)
-            "
-            class="mx-3"
-          >
-            {{ item.title }}
-          </p>
-        </v-toolbar-title>
+  <div>
+    <v-app-bar app flat elevate-on-scroll elevation="5" color="white">
+      <v-app-bar-nav-icon class="d-lg-none" @click.stop="drawer = !drawer" />
+
+      <v-container class="d-flex">
         <v-toolbar-title>
-          <v-img
-            lazy-src="https://picsum.photos/id/11/10/6"
-            :src="rightImage"
-            height="auto"
-            width="40"
-          ></v-img>
+          <v-img :src="logo" height="auto" width="140" />
         </v-toolbar-title>
-      </div>
-    </v-container>
-  </v-app-bar>
+        <!-- Space between -->
+        <v-spacer></v-spacer>
+        <!-- Right Side -->
+        <v-list-item-group
+          class="d-lg-flex justify-start align-start d-none"
+          v-model="selectedItem"
+          color="primary"
+          height="auto"
+        >
+          <v-list-item v-for="(item, index) in items" :key="index">
+            <v-list-item-content>
+              <v-list-item-title
+                class="font-weight-medium text-capitalize"
+                v-text="item"
+              />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+
+        <v-spacer></v-spacer>
+
+        <div class="d-sm-flex d-none align-center ml-4">
+          <v-btn color="primary" class="text-capitalize rounded-lg">
+            register
+          </v-btn>
+        </div>
+      </v-container>
+    </v-app-bar>
+    <v-navigation-drawer v-model="drawer" app temporary>
+      <v-list-item>
+        <v-list-item-avatar color="primary">
+          <v-img :src="drawerLogo" />
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title class="font-weight-black">
+            Tripitaca
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider light />
+
+      <v-container nav dense>
+        <v-list-item-group
+          active-class="primary--text "
+          class="d-flex flex-column align-center justify-center mt-2"
+        >
+          <v-list-item v-for="(item, index) in items" :key="index">
+            <v-list-item-content>
+              <v-list-item-title
+                class="font-weight-medium text-capitalize"
+                v-text="item"
+              />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+        <div class="d-sm-flex d-none align-center ml-4">
+          <v-btn color="primary" class="text-capitalize"> register </v-btn>
+        </div>
+      </v-container>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "NavBarSection",
   data() {
     return {
-      scrollPosition: 0,
-      sidebar: false,
-      lightLogo:
-        "https://www.tripitaca.com/_nuxt/img/TripitacaLogoWhite.c5e76f0.png",
-      darkLogo:
-        "https://www.tripitaca.com/_nuxt/img/tripitacalogo2.2b5908a.png",
-      rightImage: "https://www.tripitaca.com/_nuxt/img/profile.c3f78de.png",
-      menuItems: [
-        { title: "PLACES TO STAY", toBeHidden: true },
-        { title: "PACKAGES", toBeHidden: false },
-        { title: "LIST YOUR PROPERTY", toBeHidden: false },
-      ],
+      drawer: false,
+      selectedItem: 1,
+      items: ["Packages", "Places to Stay", "List Your Property"],
+      logo: "https://www.tripitaca.com/_nuxt/img/tripitacalogo2.2b5908a.png",
+      drawerLogo:
+        "https://www.tripitaca.com/_nuxt/icons/icon_512x512.8844cc.png",
     };
   },
   methods: {
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
-    },
-    scrolled() {
-      return this.scrollPosition < 50;
-    },
-    showitem(scrollPosition: number, toBeHidden: boolean): boolean {
-      return toBeHidden === false && scrollPosition > 50;
+    toggleDrawer() {
+      this.drawer != this.drawer;
     },
   },
-  mounted() {
-    window.addEventListener("scroll", this.updateScroll);
-  },
-});
+};
 </script>
 
-<style scoped>
-.lightText {
-  color: #fff !important;
-}
-
-.darkText {
-  color: #000 !important;
-}
-.borderless {
-  box-shadow: none !important;
-}
-.hide {
-  display: hidden !important;
-}
-
-.searchbar {
-  border: 1px solid #f7f7f7;
-  box-shadow: 0px 0px 14px 4px rgba(67, 65, 65, 0.051) !important;
-  color: #000;
-  font-weight: 600;
-}
-
-.searchbar:hover {
-  cursor: pointer;
-  color: #1c1c1c72;
-}
-
-@media (max-width: 800px) {
-  .searchbar {
-    text-align: left;
-    justify-content: left !important;
-  }
-  .search-icon-small {
-    display: hidden;
-  }
-}
-
-.transparent {
-  background-color: transparent !important;
-}
-
-.changecolor {
-  background-color: #fbfbfb !important;
-  transition: background-color 200ms;
-}
-
-.nav-logo {
-  height: 30px;
-  margin-bottom: 13px;
-}
-</style>
+<style scoped></style>

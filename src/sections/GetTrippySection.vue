@@ -1,33 +1,30 @@
 <template>
-  <v-container class="d-flex fancy-section align-center mx-auto">
-    <v-card
-      class="mr-6 d-flex flex-column justify-center"
-      flat
-      min-width="280"
-      min-height="450"
+  <v-container
+    class="d-flex px-5 flex-column justify-center align-center justify-md-space-between mb-md-15"
+  >
+    <div class="d-flex flex-column justify-center">
+      <p class="primary--text font-weight-semibold text-center text-uppercase">
+        Top value for you
+      </p>
+      <p class="text--primary font-weight-black text-h4 text-center">
+        Why Get this Trippy?
+      </p>
+      <p class="text--secondary text-center">
+        Don’t go looking for great deals, great deals will come looking for you.
+      </p>
+    </div>
+    <v-container
+      class="d-flex flex-sm-row flex-column justify-space-between align-center"
     >
-      <v-card-text>
-        <div class="center">
-          <br /><br />
-          <h2 class="text--primary text-center font-weight-black text-h3">
-            Why Get this Trippy?
-          </h2>
-          <br />
-          <div class="h4 text--primary">
-            Don’t go looking for great deals, great deals will come looking for
-            you.
-          </div>
-        </div>
-      </v-card-text>
-    </v-card>
-    <FancyCard
-      v-for="(item, index) in fancyCardItems"
-      :key="index"
-      :title="item.title"
-      :upper-text="item.upperText"
-      :lower-text="item.lowerText"
-      :image="item.background"
-    />
+      <FancyCard
+        v-for="(item, index) in fancyCardItems"
+        :key="index"
+        :title="item.title"
+        :upper-text="item.upperText"
+        :lower-text="item.lowerText"
+        :image="item.background"
+      />
+    </v-container>
   </v-container>
 </template>
 
@@ -40,45 +37,31 @@ export default {
   data: () => ({
     fancyCardItems: [
       {
-        background: "https://www.tripitaca.com/_nuxt/img/Packages.60534d7.jpeg",
-        title: "Packages",
-        upperText: "Customized packages for you.",
-        lowerText:
-          "Our hosts and hotels can customize a package for you based on your individual needs. Get a package directly from them and save more than 40%. There are no travel agents or middlemen, so you don't have to pay any extra or hidden fees.",
-      },
-      {
-        background: "https://www.tripitaca.com/_nuxt/img/Offers.2c8930b.jpeg",
+        background: "flat-color-icons:expired",
         title: "Flexible Payments",
         upperText: "Pay in installments.",
         lowerText:
           "You don't have to break the bank to travel, you can now pay for your trips in installments either before or after departure at a 0% interest fee.",
       },
       {
-        background:
-          "https://www.tripitaca.com/_nuxt/img/EmergencyBooking.d4e3913.jpeg",
+        background: "flat-color-icons:briefcase",
+        title: "Packages",
+        upperText: "Customized packages for you.",
+        lowerText:
+          "Our hosts and hotels can customize a package for you based on your individual needs.",
+      },
+      {
+        background: "flat-color-icons:donate",
         title: "Emergency Booking",
         upperText: "For tonight Only",
         lowerText:
           "Are you running late and in need of a place to stay at the last minute? Get up to 50% off bookings made after 9 p.m. For that night only!",
       },
     ],
+    background:
+      "https://centralpenn.aaa.com/sites/default/files/styles/large_xl/public/2022-11/tropical-beach-scene.jpg?itok=f-fOCktb",
   }),
 };
 </script>
 
-<style scoped>
-.fancy-section {
-  row-gap: 12px;
-  column-gap: 20px;
-}
-
-@media (max-width: 860px) {
-  .fancy-section {
-    flex-direction: column;
-  }
-}
-.center {
-  top: 50%;
-  left: 50%;
-}
-</style>
+<style scoped></style>
