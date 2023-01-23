@@ -1,5 +1,8 @@
 # Tripitaca Website Re-design
 
+# Link to app
+[Website](https://taupe-horse-d95fdd.netlify.app/#/)
+
 ## Project Setup
 
 ```
